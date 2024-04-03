@@ -3,7 +3,7 @@
 MPU9250 mpu;
 
 void setup() {
-    Serial.begin(115200);
+    Serial.begin(9600);
     Wire.begin();
 
     if (!mpu.setup(0x68)) {  // change to your own address
@@ -35,5 +35,5 @@ void print_roll_pitch_yaw() {
                   // String(mpu.getMag(1), 5) + "," +
                   // String(mpu.getMag(2), 5);
 
-  Serial.println(dataToSend);
+  // Serial.println(dataToSend);
 }
