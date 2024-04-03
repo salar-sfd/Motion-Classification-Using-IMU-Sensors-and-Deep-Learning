@@ -1,14 +1,17 @@
 #include "MPU9250.h"
+#include <SoftwareSerial.h>
+
+SoftwareSerial bluetoothSerial(10, 11);  // RX, TX pins
 
 MPU9250 mpu;
 
 void setup() {
-    Serial.begin(9600);
+    bluetoothSerial.begin(9600);
     Wire.begin();
 
     if (!mpu.setup(0x68)) {  // change to your own address
         while (1) {
-            Serial.println("MPU connection failed. Please check your connection with `connection_check` example.");
+            bluetoothSerial.println("MPU connection failed. Please check your connection with `connection_check` example.");
             delay(5000);
         }
     }
@@ -35,5 +38,5 @@ void print_roll_pitch_yaw() {
                   // String(mpu.getMag(1), 5) + "," +
                   // String(mpu.getMag(2), 5);
 
-  // Serial.println(dataToSend);
+  bluetoothSerial.println(dataToSend);
 }
