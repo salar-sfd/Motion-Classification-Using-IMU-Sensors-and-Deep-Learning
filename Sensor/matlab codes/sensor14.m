@@ -1,31 +1,68 @@
-% Create a Bluetooth object
-bt = bluetooth('HC-05', 1); % Replace 'HC-05' with the correct device name
+clc, clear, close all;
+if(exist('bt', 'var') == 0)
+    bt = bluetooth('MPU9250', 1); 
+end
+disp('Connected.')
 
-% Open the Bluetooth connection
+accel_list = [];
+gyro_list = [];
+t_list = [];
+color = ['r', 'g', 'b'];
+acc_axes = {'acc-x', 'acc-y', 'acc-z'};
+gyr_axes = {'gyr-x', 'gyr-y', 'gyr-z'};
+
 fopen(bt);
-
-% Read and process IMU data
-while true
-    % Read a line of data from the Bluetooth connection
+q=0;
+t0 = tic;
+flushinput(bt);
+while toc(t0)<10
     data = fgetl(bt);
+    value = cellfun(@str2double, split(data, ",")).';
+    accel = value(1:3)/1000;
+    gyro = value(4:6)/1000;
+    t = value(7)/1000;
+
+    accel_list = [accel_list; accel];
+    gyro_list = [gyro_list; gyro];
+    t_list = [t_list, t];
+
     
-    % Split the data into individual values
-    values = split(data, ",");
-    
-    % Convert the values to numeric format
-    accX = str2double(values(1));
-    accY = str2double(values(2));
-    accZ = str2double(values(3));
-    gyroX = str2double(values(4));
-    gyroY = str2double(values(5));
-    gyroZ = str2double(values(6));
-    magX = str2double(values(7));
-    magY = str2double(values(8));
-    magZ = str2double(values(9));
-    
-    % Process the IMU data as desired
-    % ...
+
+    q=q+1;
 end
 
-% Close the Bluetooth connection
-fclose(bt);
+%%
+figure
+hold off;
+for i=1:3
+subplot(3, 2, 2*i-1)
+plot(t_list, accel_list(:, i), "Color", color(i));
+%         xlim([0, 100])
+ylim([-30, 30]);
+title(acc_axes{i});
+hold on;
+end
+for i=1:3
+subplot(3, 2, 2*i)
+plot(t_list, gyro_list(:, i), "Color", color(i));
+%         xlim([0, 100])
+ylim([-30, 30]);
+title(gyr_axes{i});
+hold on;
+end
+
+%%
+figure
+hold off;
+for i=1:3
+subplot(3, 2, 2*i-1)
+plot(abs(fft(accel_list(:, i))), "Color", color(i));
+title(acc_axes{i});
+hold on;
+end
+for i=1:3
+subplot(3, 2, 2*i)
+plot(abs(fft(gyro_list(:, i))), "Color", color(i));
+title(gyr_axes{i});
+hold on;
+end

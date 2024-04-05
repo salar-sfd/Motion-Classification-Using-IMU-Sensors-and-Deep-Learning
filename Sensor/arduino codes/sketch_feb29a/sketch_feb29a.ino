@@ -1,42 +1,34 @@
 #include "MPU9250.h"
-#include <SoftwareSerial.h>
 
-SoftwareSerial bluetoothSerial(10, 11);  // RX, TX pins
+MPU9250 mpu; // You can also use MPU9255 as is
 
-MPU9250 mpu;
 
+const unsigned long startMillis = 0;
 void setup() {
-    bluetoothSerial.begin(9600);
+    Serial.begin(115200);
     Wire.begin();
+    delay(2000);
 
-    if (!mpu.setup(0x68)) {  // change to your own address
-        while (1) {
-            bluetoothSerial.println("MPU connection failed. Please check your connection with `connection_check` example.");
-            delay(5000);
-        }
-    }
+    mpu.setup(0x68);  // change to your own address
+    mpu.setAccelDataRate(1000);
+    mpu.setGyroDataRate(1000);
 }
 
 void loop() {
-    if (mpu.update()) {
-        static uint32_t prev_ms = millis();
-        if (millis() > prev_ms + 25) {
-            print_roll_pitch_yaw();
-            prev_ms = millis();
-        }
+    unsigned long currentMillis = millis();
+
+    // Check if it's time to sample
+    if (currentMillis - startMillis <=10000 && mpu.update()) {
+        Serial.print(mpu.getAccX()); Serial.print(", ");
+        Serial.print(mpu.getAccY()); Serial.print(", ");
+        Serial.print(mpu.getAccZ()); Serial.print(", ");
+        Serial.print(mpu.getGyroX()); Serial.print(", ");
+        Serial.print(mpu.getGyroY()); Serial.print(", ");
+        Serial.println(mpu.getGyroZ());
+        
     }
 }
-
-void print_roll_pitch_yaw() {
-  String dataToSend = String(mpu.getAcc(0)*10, 5) + "," +
-                  String(mpu.getAcc(1)*10, 5) + "," +
-                  String(mpu.getAcc(2)*10, 5) + "," +
-                  String(mpu.getGyro(0)*3.14159265359/180, 5) + "," +
-                  String(mpu.getGyro(1)*3.14159265359/180, 5) + "," +
-                  String(mpu.getGyro(2)*3.14159265359/180, 5);
-                  // String(mpu.getMag(0), 5) + "," +
-                  // String(mpu.getMag(1), 5) + "," +
-                  // String(mpu.getMag(2), 5);
-
-  bluetoothSerial.println(dataToSend);
-}
+//currentMillis - previousMillis >= samplingInterval && 
+//        previousMillis = currentMillis;
+//const unsigned long samplingInterval = 5; // Sampling interval in milliseconds
+//unsigned long previousMillis = 0;
