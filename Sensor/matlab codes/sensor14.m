@@ -15,11 +15,11 @@ fopen(bt);
 q=0;
 t0 = tic;
 flushinput(bt);
-while toc(t0)<60
+while toc(t0)<10
     data = fgetl(bt);
     value = cellfun(@str2double, split(data, ",")).';
-    accel = value(1:3)/2000;
-    gyro = value(4:6)/3000;
+    accel = value(1:3)/32768;
+    gyro = value(4:6)/2.^16;
     t = value(7)/1000;
 
     accel_list = [accel_list; accel];
@@ -27,7 +27,7 @@ while toc(t0)<60
     t_list = [t_list, t];
 
     hold off;
-    if(mod(q, 21)==0)
+    if(mod(q, 9)==0)
     for i=1:3
         subplot(3, 2, 2*i-1)
         plot(accel_list(:, i), "Color", color(i));
