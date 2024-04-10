@@ -15,7 +15,7 @@ fopen(bt);
 q=0;
 t0 = tic;
 flushinput(bt);
-while toc(t0)<30
+while toc(t0)<60
     data = fgetl(bt);
     value = cellfun(@str2double, split(data, ",")).';
     accel = value(1:3)/2000;
@@ -27,7 +27,7 @@ while toc(t0)<30
     t_list = [t_list, t];
 
     hold off;
-    if(mod(q, 11)==0)
+    if(mod(q, 21)==0)
     for i=1:3
         subplot(3, 2, 2*i-1)
         plot(accel_list(:, i), "Color", color(i));
