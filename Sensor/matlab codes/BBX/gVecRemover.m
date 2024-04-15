@@ -6,14 +6,14 @@ end
 disp('Connected.')
 
 %% Calibration
-calibrationTimer = 2;
+calibrationTime = 2;
 accel_raw_list = [];
 accel_list = [];
 gyro_list = [];
 t_list = [];
 t0 = tic;
 disp('Calibrating...');
-while(toc(t0)<calibrationTimer)
+while(toc(t0)<calibrationTime)
     data = fgetl(bt);
     value = cellfun(@str2double, split(data, ",")).';
     accel = value(1:3)/(16384);

@@ -17,7 +17,7 @@ fopen(bt);
 q=0;
 t0 = tic;
 flushinput(bt);
-while toc(t0)<100
+while toc(t0)<10
     data = fgetl(bt);
     value = cellfun(@str2double, split(data, ",")).';
     accel = value(1:3)/(16384);
