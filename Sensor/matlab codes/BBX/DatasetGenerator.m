@@ -56,8 +56,8 @@ threshold_fall = 800;
 threshold = threshold_rise*[accel_var, gyro_var];
 
 
-N_class = 4;
-class_names = ['-', 'O', 'L', 'A'];
+class_names = ['-', 'a', 'b', 'c', 'd', 'e'];
+N_class = length(class_names);
 class_counter = 0;
 
 X_train = cell(0);
@@ -66,7 +66,7 @@ y_train = [];
 flushinput(bt);
 t0 = tic;
 
-while toc(t0)<120
+while toc(t0)<15
     %
     for i=1:spr
         data = fgetl(bt);
@@ -125,4 +125,13 @@ s = X_train{2};
 plot(s(:, 1:6));
 
 %% Saving
-save('../../datasets/BBX/TrainSet.mat', 'X_train', 'y_train', 'class_names');
+file_name = 'TrainSet1.mat';
+full_path = ['../../datasets/BBX/', file_name];
+if(exist(full_path, 'file'))
+    temp_X_train = X_train;
+    temp_y_train = y_train;
+    load(full_path, 'X_train', 'y_train', 'class_names');
+    X_train = [X_train; temp_X_train];
+    y_train = [y_train, temp_y_train];
+end
+save(full_path, 'X_train', 'y_train', 'class_names');

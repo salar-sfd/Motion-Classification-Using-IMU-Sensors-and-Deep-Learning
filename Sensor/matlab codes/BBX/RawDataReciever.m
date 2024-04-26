@@ -29,7 +29,7 @@ while toc(t0)<100
     t_list = [t_list, t];
 
     hold off;
-    if(mod(q, 101)==0)
+    if(mod(q, 11)==0)
     for i=1:3
         subplot(3, 2, 2*i-1)
         plot(accel_list(:, i), "Color", color(i));

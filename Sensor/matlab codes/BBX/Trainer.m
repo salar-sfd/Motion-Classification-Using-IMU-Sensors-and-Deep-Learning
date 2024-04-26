@@ -1,7 +1,9 @@
 clc, clear, close all;
 
 %% Loading
-load('../../datasets/BBX/TrainSet.mat');
+file_name = 'TrainSet1.mat';
+full_path = ['../../datasets/BBX/', file_name];
+load(full_path);
 
 x_train = cell(0);
 
@@ -15,7 +17,7 @@ for i=1:N_train
     x = x_train{i};
     T_train(i) = size(x,2);
 end
-[T_train,indices] = sort(T_train);
+[T_train, indices] = sort(T_train);
 x_train = x_train(indices);
 y_train = y_train(indices);
 
@@ -24,6 +26,15 @@ bar(T_train)
 xlabel("Sequence")
 ylabel("Length")
 title("Sorted Data")
+
+figure
+n = 5;
+m = 10;
+for i = 1:n*m
+    subplot(n, m, i);
+    plot(x_train{i}');
+    title(class_names(y_train(i)+1));
+end
 %% Network
 Nf = 6;
 
@@ -41,7 +52,7 @@ layers = [
     globalAveragePooling1dLayer
     fullyConnectedLayer(16)
     fullyConnectedLayer(16)
-    fullyConnectedLayer(4)
+    fullyConnectedLayer(length(class_names))
     softmaxLayer
     classificationLayer];
 
@@ -68,4 +79,4 @@ y_train_pred = classify(net, x_train);
 confusion = confusionmat(y_train_categorical, y_train_pred);
 
 %%
-save('../../datasets/BBX/net.mat', 'net', 'class_names');
+save('../../models/BBX/net.mat', 'net', 'class_names');
