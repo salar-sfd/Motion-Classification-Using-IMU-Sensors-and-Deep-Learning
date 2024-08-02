@@ -1,0 +1,332 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Move Component(s) Origin to Grid</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Move Component(s) Origin to Grid</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">7/30/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10:46:28 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc" class="file"><acronym title="I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc">I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table><a name="ID3NSYXPIDZQLEKTKHKQT10RUWXJ4JXRLP3HTKKVMXTNQEENCK0ZZE"><h2>Components Origin</h2></a><a name="IDJC2YBNO41TW1JR4W43UHUJG1ZBF1IENWRPZL4AKSWNBK40O3BQ4P"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning"></th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2594mil|Location2.X=2763.952mil|Location1.Y=588.307mil|Location2.Y=760.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2594mil|Location2.X=2763.952mil|Location1.Y=588.307mil|Location2.Y=760.981mil|Absolute=True">SMT Small Component R12-10k (2515mil,533.662mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1394mil|Location2.X=1543.958mil|Location1.Y=588.307mil|Location2.Y=760.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1394mil|Location2.X=1543.958mil|Location1.Y=588.307mil|Location2.Y=760.981mil|Absolute=True">SMT Small Component R11-10k (1315mil,533.662mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1121mil|Location2.X=1290.951mil|Location1.Y=488.583mil|Location2.Y=660.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1121mil|Location2.X=1290.951mil|Location1.Y=488.583mil|Location2.Y=660.981mil|Absolute=True">SMT Small Component R10-10k (1042.244mil,433.937mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2414mil|Location2.X=2546.102mil|Location1.Y=588.307mil|Location2.Y=760.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2414mil|Location2.X=2546.102mil|Location1.Y=588.307mil|Location2.Y=760.981mil|Absolute=True">SMT Small Component R9-10k (2335mil,533.662mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2234mil|Location2.X=2366.102mil|Location1.Y=588.307mil|Location2.Y=760.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2234mil|Location2.X=2366.102mil|Location1.Y=588.307mil|Location2.Y=760.981mil|Absolute=True">SMT Small Component R8-10k (2155mil,533.662mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1606mil|Location2.X=1775.951mil|Location1.Y=431.614mil|Location2.Y=607.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1606mil|Location2.X=1775.951mil|Location1.Y=431.614mil|Location2.Y=607.981mil|Absolute=True">SMT Small Component C12-0.1uF (1423.819mil,365.276mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2032.638mil|Location2.X=2182.958mil|Location1.Y=585mil|Location2.Y=761.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2032.638mil|Location2.X=2182.958mil|Location1.Y=585mil|Location2.Y=761.981mil|Absolute=True">SMT Small Component C11-0.1uF (1850mil,518.662mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1821mil|Location2.X=1990.951mil|Location1.Y=426.614mil|Location2.Y=602.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1821mil|Location2.X=1990.951mil|Location1.Y=426.614mil|Location2.Y=602.981mil|Absolute=True">SMT Small Component C10-0.01uF (1638.819mil,360.276mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1735.01mil|Location2.X=1814.99mil|Location1.Y=2246.654mil|Location2.Y=2378.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1735.01mil|Location2.X=1814.99mil|Location1.Y=2246.654mil|Location2.Y=2378.543mil|Absolute=True">SMT Small Component C9-22pF (1879.724mil,2064.016mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.025mil|Location2.X=1940.006mil|Location1.Y=2246.654mil|Location2.Y=2379.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.025mil|Location2.X=1940.006mil|Location1.Y=2246.654mil|Location2.Y=2379.984mil|Absolute=True">SMT Small Component C8-22pF (2004.74mil,2064.016mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2801.654mil|Location2.X=2933.543mil|Location1.Y=1536.614mil|Location2.Y=1712.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2801.654mil|Location2.X=2933.543mil|Location1.Y=1536.614mil|Location2.Y=1712.981mil|Absolute=True">SMT Small Component C7-22pF (2619.016mil,1470.276mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3211.654mil|Location2.X=3343.543mil|Location1.Y=1531.614mil|Location2.Y=1707.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3211.654mil|Location2.X=3343.543mil|Location1.Y=1531.614mil|Location2.Y=1707.981mil|Absolute=True">SMT Small Component C6-22pF (3029.016mil,1465.276mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1001.063mil|Location2.X=1808.937mil|Location1.Y=1190.01mil|Location2.Y=1383.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1001.063mil|Location2.X=1808.937mil|Location1.Y=1190.01mil|Location2.Y=1383.937mil|Absolute=True">SIP Component H3 (2420mil,2120mil) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2486mil|Location2.X=2593.937mil|Location1.Y=1806.063mil|Location2.Y=2713.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2486mil|Location2.X=2593.937mil|Location1.Y=1806.063mil|Location2.Y=2713.981mil|Absolute=True">SIP Component H1 (3330mil,1195mil) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1111mil|Location2.X=1918.937mil|Location1.Y=2506.063mil|Location2.Y=2713.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1111mil|Location2.X=1918.937mil|Location1.Y=2506.063mil|Location2.Y=2713.981mil|Absolute=True">SIP Component H2 (2530mil,3350mil) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1001mil|Location2.X=1120.968mil|Location1.Y=1806.063mil|Location2.Y=2713.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1001mil|Location2.X=1120.968mil|Location1.Y=1806.063mil|Location2.Y=2713.981mil|Absolute=True">SIP Component H4 (1845mil,1195mil) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2000.01mil|Location2.X=2083.78mil|Location1.Y=1995.666mil|Location2.Y=2215.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2000.01mil|Location2.X=2083.78mil|Location1.Y=1995.666mil|Location2.Y=2215.276mil|Absolute=True">SMT Small Component L (2067.52mil,2246.299mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1936.024mil|Location2.X=2479.331mil|Location1.Y=2394.764mil|Location2.Y=2615.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1936.024mil|Location2.X=2479.331mil|Location1.Y=2394.764mil|Location2.Y=2615.236mil|Absolute=True">SMT Small Component Y1-16MHz (1868.583mil,2325.905mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1981.852mil|Location2.X=2061.832mil|Location1.Y=2246.654mil|Location2.Y=2378.544mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1981.852mil|Location2.X=2061.832mil|Location1.Y=2246.654mil|Location2.Y=2378.544mil|Absolute=True">SMT Small Component R8-1k (1932mil,2457.756mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2821.024mil|Location2.X=3364.331mil|Location1.Y=1154.764mil|Location2.Y=1375.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2821.024mil|Location2.X=3364.331mil|Location1.Y=1154.764mil|Location2.Y=1375.236mil|Absolute=True">SMT Small Component Y2-12MHz (2753.583mil,1085.906mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1843.701mil|Location2.X=1956.299mil|Location1.Y=1991.457mil|Location2.Y=2215.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1843.701mil|Location2.X=1956.299mil|Location1.Y=1991.457mil|Location2.Y=2215.276mil|Absolute=True">SMT Small Component TC2-4.7uF (1900mil,2095mil) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1145.01mil|Location2.X=1224.99mil|Location1.Y=2221.457mil|Location2.Y=2504.984mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1145.01mil|Location2.X=1224.99mil|Location1.Y=2221.457mil|Location2.Y=2504.984mil|Absolute=True">SMT Small Component C5-0.1uF (1289.724mil,2038.819mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1735.01mil|Location2.X=1814.99mil|Location1.Y=2085.354mil|Location2.Y=2217.244mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1735.01mil|Location2.X=1814.99mil|Location1.Y=2085.354mil|Location2.Y=2217.244mil|Absolute=True">SMT Small Component C4-0.1uF (1670.276mil,2399.882mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1816.654mil|Location2.X=1949mil|Location1.Y=1426.614mil|Location2.Y=1602.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1816.654mil|Location2.X=1949mil|Location1.Y=1426.614mil|Location2.Y=1602.981mil|Absolute=True">SMT Small Component C3-0.1uF (2131.181mil,1360.276mil) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2240.01mil|Location2.X=2319.99mil|Location1.Y=1935.685mil|Location2.Y=2215.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2240.01mil|Location2.X=2319.99mil|Location1.Y=1935.685mil|Location2.Y=2215.276mil|Absolute=True">SMT Small Component RX (2302.113mil,2246.299mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1271.614mil|Location2.X=1371.974mil|Location1.Y=1801.458mil|Location2.Y=2032.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1271.614mil|Location2.X=1371.974mil|Location1.Y=1801.458mil|Location2.Y=2032.981mil|Absolute=True">SMT Small Component C1-0.1uF (1414.724mil,1618.82mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2448.032mil|Location2.X=2568.386mil|Location1.Y=1376.654mil|Location2.Y=1608.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2448.032mil|Location2.X=2568.386mil|Location1.Y=1376.654mil|Location2.Y=1608.981mil|Absolute=True">SMT Small Component C2-0.1uF (2425.276mil,1194.016mil) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1495.572mil|Location2.X=1764.428mil|Location1.Y=1764.508mil|Location2.Y=2033.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1495.572mil|Location2.X=1764.428mil|Location1.Y=1764.508mil|Location2.Y=2033.981mil|Absolute=True">SMT Small Component D1 (1630mil,1850mil) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2360.01mil|Location2.X=2439.99mil|Location1.Y=1935.685mil|Location2.Y=2215.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2360.01mil|Location2.X=2439.99mil|Location1.Y=1935.685mil|Location2.Y=2215.276mil|Absolute=True">SMT Small Component TX (2419.41mil,2246.299mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2109.571mil|Location2.X=2189.552mil|Location1.Y=2246.654mil|Location2.Y=2378.545mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2109.571mil|Location2.X=2189.552mil|Location1.Y=2246.654mil|Location2.Y=2378.545mil|Absolute=True">SMT Small Component R2-1k (2239.141mil,2167.441mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2206.032mil|Location2.X=2326.417mil|Location1.Y=1731.457mil|Location2.Y=1962.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2206.032mil|Location2.X=2326.417mil|Location1.Y=1731.457mil|Location2.Y=1962.981mil|Absolute=True">SMT Small Component R3-1k (2198.937mil,1652.244mil) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2086.032mil|Location2.X=2206.417mil|Location1.Y=1731.654mil|Location2.Y=1963.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2086.032mil|Location2.X=2206.417mil|Location1.Y=1731.654mil|Location2.Y=1963.981mil|Absolute=True">SMT Small Component R4-1k (2078.937mil,1652.441mil) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2232.29mil|Location2.X=2312.271mil|Location1.Y=2246.654mil|Location2.Y=2378.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2232.29mil|Location2.X=2312.271mil|Location1.Y=2246.654mil|Location2.Y=2378.543mil|Absolute=True">SMT Small Component R5-330 (2364.157mil,2167.441mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2360.01mil|Location2.X=2439.99mil|Location1.Y=2246.654mil|Location2.Y=2380.181mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2360.01mil|Location2.X=2439.99mil|Location1.Y=2246.654mil|Location2.Y=2380.181mil|Absolute=True">SMT Small Component R6-330 (2489.173mil,2167.441mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2120.01mil|Location2.X=2201.076mil|Location1.Y=1935.686mil|Location2.Y=2215.276mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2120.01mil|Location2.X=2201.076mil|Location1.Y=1935.686mil|Location2.Y=2215.276mil|Absolute=True">SMT Small Component ON (2184.816mil,2246.299mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1363.702mil|Location2.X=1523.955mil|Location1.Y=1726.456mil|Location2.Y=2049.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1363.702mil|Location2.X=1523.955mil|Location1.Y=1726.456mil|Location2.Y=2049.981mil|Absolute=True">SMT Small Component TC1-4.7u (1420mil,1830mil) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1970.01mil|Location2.X=2452.677mil|Location1.Y=1316.787mil|Location2.Y=1676.677mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1970.01mil|Location2.X=2452.677mil|Location1.Y=1316.787mil|Location2.Y=1676.677mil|Absolute=True">SOIC Component CH340G (2245mil,1506.732mil) on Bottom Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=320.861mil|Location2.X=1658.961mil|Location1.Y=2036.039mil|Location2.Y=2423.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=320.861mil|Location2.X=1658.961mil|Location1.Y=2036.039mil|Location2.Y=2423.961mil|Absolute=True">LCC Component ATmega328-AU (1465mil,2230mil) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1347.638mil|Location2.X=1547.44mil|Location1.Y=1027.56mil|Location2.Y=1321.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1347.638mil|Location2.X=1547.44mil|Location1.Y=1027.56mil|Location2.Y=1321.981mil|Absolute=True">LCC Component U3-MPU-9250 (1450mil,1125mil) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.055mil|Location2.X=1814.945mil|Location1.Y=1421.694mil|Location2.Y=1758.306mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.055mil|Location2.X=1814.945mil|Location1.Y=1421.694mil|Location2.Y=1758.306mil|Absolute=True">Component 5V Reg (1630mil,1590mil) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=927.007mil|Location2.X=1212.245mil|Location1.Y=1293.828mil|Location2.Y=1807.479mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=927.007mil|Location2.X=1212.245mil|Location1.Y=1293.828mil|Location2.Y=1807.479mil|Absolute=True">SIP Component USB1-USB MICRO USB_AB_BM_SHS (2961.882mil,2854.818mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.01mil|Location2.X=1939.99mil|Location1.Y=1746.654mil|Location2.Y=1878.544mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1860.01mil|Location2.X=1939.99mil|Location1.Y=1746.654mil|Location2.Y=1878.544mil|Absolute=True">SMT Small Component R7-1k (1991.063mil,1667.441mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2017.417mil|Location2.X=2438.213mil|Location1.Y=1667.918mil|Location2.Y=1926.355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2017.417mil|Location2.X=2438.213mil|Location1.Y=1667.918mil|Location2.Y=1926.355mil|Absolute=True">Component S1 (3348.72mil,2871.417mil) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

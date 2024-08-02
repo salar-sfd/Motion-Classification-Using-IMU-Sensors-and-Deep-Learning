@@ -1,0 +1,35 @@
+Added Pin To Net: NetName=D1 / Tx Pin=H1-1
+Added Pin To Net: NetName=D0 / Rx Pin=H1-2
+Added Pin To Net: NetName=RESET Pin=H1-3
+Added Pin To Net: NetName=GND Pin=H1-4
+Added Pin To Net: NetName=D2 Pin=H1-5
+Added Pin To Net: NetName=D3 Pin=H1-6
+Added Pin To Net: NetName=D4 Pin=H1-7
+Added Pin To Net: NetName=D5 Pin=H1-8
+Added Pin To Net: NetName=D6 Pin=H2-1
+Added Pin To Net: NetName=D7 Pin=H2-2
+Added Pin To Net: NetName=D8 Pin=H2-3
+Added Pin To Net: NetName=D9 Pin=H2-4
+Added Pin To Net: NetName=D10 Pin=H2-5
+Added Pin To Net: NetName=D11 / MOSI Pin=H2-6
+Added Pin To Net: NetName=D12 / MISO Pin=H2-7
+Added Pin To Net: NetName=GND Pin=H3-2
+Added Pin To Net: NetName=RESET Pin=H3-3
+Added Pin To Net: NetName=5V Pin=H3-4
+Added Pin To Net: NetName=A7 Pin=H3-5
+Added Pin To Net: NetName=A6 Pin=H3-6
+Added Pin To Net: NetName=A5 Pin=H3-7
+Added Pin To Net: NetName=A4 Pin=H3-8
+Added Pin To Net: NetName=A3 Pin=H4-1
+Added Pin To Net: NetName=A2 Pin=H4-2
+Added Pin To Net: NetName=A1 Pin=H4-3
+Added Pin To Net: NetName=A0 Pin=H4-4
+Added Pin To Net: NetName=3.3V Pin=H4-6
+Added Pin To Net: NetName=D13 / SCK Pin=H4-7
+Added Pin To Net: NetName=AREF Pin=ATmega328-AU-20
+Added Pin To Net: NetName=AREF Pin=C5-2
+Added Pin To Net: NetName=AREF Pin=H4-5
+Added Net: Name=AREF
+Added Pin To Net: NetName=VIN Pin=5V Reg-3
+Added Pin To Net: NetName=VIN Pin=H3-1
+Added Net: Name=VIN

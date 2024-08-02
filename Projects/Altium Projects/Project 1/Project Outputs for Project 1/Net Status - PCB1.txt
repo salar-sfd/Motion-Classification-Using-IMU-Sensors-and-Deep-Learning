@@ -1,0 +1,54 @@
+Net Status Report
+Filename     : I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Date         : 8/1/2024
+Time         : 1:36:14 AM
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    3.3V, Signal Layers Only, 0mm
+    5V, Signal Layers Only, 0mm
+    A0, Signal Layers Only, 7.4518mm
+    A1, Signal Layers Only, 9.0219mm
+    A2, Signal Layers Only, 12.3191mm
+    A3, Signal Layers Only, 15.4511mm
+    A4, Signal Layers Only, 41.7987mm
+    A5, Signal Layers Only, 42.6185mm
+    A6, Signal Layers Only, 7.079mm
+    A7, Signal Layers Only, 6.7311mm
+    AREF, Signal Layers Only, 7.4905mm
+    D0 / Rx, Signal Layers Only, 39.7129mm
+    D1 / Tx, Signal Layers Only, 39.0156mm
+    D10, Signal Layers Only, 4.5624mm
+    D11 / MOSI, Signal Layers Only, 5.9861mm
+    D12 / MISO, Signal Layers Only, 7.5152mm
+    D13 / SCK, Signal Layers Only, 28.9477mm
+    D2, Signal Layers Only, 28.0671mm
+    D3, Signal Layers Only, 26.105mm
+    D4, Signal Layers Only, 33.8122mm
+    D5, Signal Layers Only, 8.8011mm
+    D6, Signal Layers Only, 7.3601mm
+    D7, Signal Layers Only, 5.8504mm
+    D8, Signal Layers Only, 4.579mm
+    D9, Signal Layers Only, 3.8583mm
+    GND, Signal Layers Only, 0mm
+    NetATmega328-AU_7, Signal Layers Only, 21.4036mm
+    NetATmega328-AU_8, Signal Layers Only, 12.7694mm
+    NetC12_1, Signal Layers Only, 3.2508mm
+    NetC1_2, Signal Layers Only, 17.3293mm
+    NetC2_1, Signal Layers Only, 9.7994mm
+    NetC6_2, Signal Layers Only, 19.4789mm
+    NetC7_2, Signal Layers Only, 26.8139mm
+    NetCH340G_2, Signal Layers Only, 5.7348mm
+    NetCH340G_3, Signal Layers Only, 7.2089mm
+    NetCH340G_5, Signal Layers Only, 33.0511mm
+    NetCH340G_6, Signal Layers Only, 30.8921mm
+    NetL_2, Signal Layers Only, 2.401mm
+    NetON_2, Signal Layers Only, 2.4011mm
+    NetR10_1, Signal Layers Only, 3.5362mm
+    NetR11_2, Signal Layers Only, 4.7203mm
+    NetR12_1, Signal Layers Only, 6.0325mm
+    NetR5_1, Signal Layers Only, 2.401mm
+    NetR6_1, Signal Layers Only, 2.401mm
+    RESET, Signal Layers Only, 71.8094mm
+    VIN, Signal Layers Only, 18.3019mm
+count : 46

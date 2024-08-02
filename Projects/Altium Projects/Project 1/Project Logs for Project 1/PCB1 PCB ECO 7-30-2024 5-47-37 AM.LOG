@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=3.3V Pin=H4-1
+Removed Pin From Net: NetName=A3 Pin=H4-2
+Removed Pin From Net: NetName=A2 Pin=H4-3
+Removed Pin From Net: NetName=A1 Pin=H4-4
+Removed Pin From Net: NetName=A0 Pin=H4-5
+Added Pin To Net: NetName=3.3V Pin=H3-6
+Added Pin To Net: NetName=A3 Pin=H4-1
+Added Pin To Net: NetName=A2 Pin=H4-2
+Added Pin To Net: NetName=A1 Pin=H4-3
+Added Pin To Net: NetName=A0 Pin=H4-4
+Added Pin To Net: NetName=A7 Pin=H4-5
+Added Member To Class: ClassName=Sheet1 Member=Component ATmega328-AU

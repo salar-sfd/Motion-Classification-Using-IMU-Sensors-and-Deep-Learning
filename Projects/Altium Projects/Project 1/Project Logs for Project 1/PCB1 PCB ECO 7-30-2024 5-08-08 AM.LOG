@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=H1 Old Footprint=N-Header 8X2 New Footprint=Header 8
+Change Component Footprint: Designator=H2 Old Footprint=N-Header 8X2 New Footprint=Header 8
+Added Component: Designator=H3(Header 8)
+Added Component: Designator=H4(Header 8)
+Added Member To Class: ClassName=Sheet1 Member=Component H3
+Added Member To Class: ClassName=Sheet1 Member=Component H4

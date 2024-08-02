@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=A4 Pin=R8-1
+Added Pin To Net: NetName=A5 Pin=R9-1
+Added Pin To Net: NetName=A5 Pin=U3-23
+Added Pin To Net: NetName=A4 Pin=U3-24
+Added Member To Class: ClassName=Sheet1 Member=Component R8 10k

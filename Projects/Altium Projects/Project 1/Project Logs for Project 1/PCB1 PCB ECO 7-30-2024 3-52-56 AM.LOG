@@ -1,0 +1,10 @@
+Removed Member From Class: ClassName=Sheet1 Member=YELLOW1
+Change Component Comment : Designator=RED1 Old Comment=LED_SMD_0805 New Comment=
+Change Component Designator: OldDesignator=BLUE1 NewDesignator=B1
+Change Component Designator: OldDesignator=GREEN1 NewDesignator=G1
+Change Component Designator: OldDesignator=RED1 NewDesignator=R1
+Change Component Designator: OldDesignator=YELLOW1 NewDesignator=Y1
+Change Net Name : Old Net Name=NetBLUE1_2 New Net Name=NetB1_2
+Change Net Name : Old Net Name=NetGREEN1_2 New Net Name=NetG1_2
+Change Net Name : Old Net Name=NetR2_2 New Net Name=NetR1_1
+Added Member To Class: ClassName=Sheet1 Member=Component Y1 16MHz

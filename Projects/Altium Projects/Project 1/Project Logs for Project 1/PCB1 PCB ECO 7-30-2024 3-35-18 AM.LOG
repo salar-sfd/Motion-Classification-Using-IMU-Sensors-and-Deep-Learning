@@ -1,0 +1,50 @@
+Added Component: Designator=H1(N-Header 8X2)
+Added Component: Designator=H2(N-Header 8X2)
+Added Component: Designator=R8(RES0805)
+Added Component: Designator=Y1(Crystal SMD)
+Added Component: Designator=YELLOW1(LED_SMD_0805)
+Added Pin To Net: NetName=GND Pin=U2-3
+Added Pin To Net: NetName=GND Pin=U2-5
+Added Pin To Net: NetName=GND Pin=U2-21
+Added Pin To Net: NetName=GND Pin=YELLOW1-1
+Change Net Name : Old Net Name=NetBLUE1_1 New Net Name=D1 / Tx
+Change Net Name : Old Net Name=NetGREEN1_1 New Net Name=D0 / Rx
+Added Pin To Net: NetName=D2 Pin=U2-32
+Added Net: Name=D2
+Added Pin To Net: NetName=D3 Pin=U2-1
+Added Net: Name=D3
+Added Pin To Net: NetName=D4 Pin=U2-2
+Added Net: Name=D4
+Added Pin To Net: NetName=D5 Pin=U2-9
+Added Net: Name=D5
+Added Pin To Net: NetName=D6 Pin=U2-10
+Added Net: Name=D6
+Added Pin To Net: NetName=D7 Pin=U2-11
+Added Net: Name=D7
+Added Pin To Net: NetName=D8 Pin=U2-12
+Added Net: Name=D8
+Added Pin To Net: NetName=D9 Pin=U2-13
+Added Net: Name=D9
+Added Pin To Net: NetName=D10 Pin=U2-14
+Added Net: Name=D10
+Added Pin To Net: NetName=D11 / MOSI Pin=U2-15
+Added Net: Name=D11 / MOSI
+Added Pin To Net: NetName=D12 / MISO Pin=U2-16
+Added Net: Name=D12 / MISO
+Added Pin To Net: NetName=D13 / SCK Pin=R8-1
+Added Pin To Net: NetName=D13 / SCK Pin=U2-17
+Added Net: Name=D13 / SCK
+Added Pin To Net: NetName=NetR8_2 Pin=R8-2
+Added Pin To Net: NetName=NetR8_2 Pin=YELLOW1-2
+Added Net: Name=NetR8_2
+Added Pin To Net: NetName=NetU2_7 Pin=U2-7
+Added Pin To Net: NetName=NetU2_7 Pin=Y1-2
+Added Net: Name=NetU2_7
+Added Pin To Net: NetName=NetU2_8 Pin=U2-8
+Added Pin To Net: NetName=NetU2_8 Pin=Y1-1
+Added Net: Name=NetU2_8
+Added Member To Class: ClassName=Sheet1 Member=Component H1
+Added Member To Class: ClassName=Sheet1 Member=Component H2
+Added Member To Class: ClassName=Sheet1 Member=Component R8 1k
+Added Member To Class: ClassName=Sheet1 Member=Component Y1 16MHz
+Added Member To Class: ClassName=Sheet1 Member=Component YELLOW1

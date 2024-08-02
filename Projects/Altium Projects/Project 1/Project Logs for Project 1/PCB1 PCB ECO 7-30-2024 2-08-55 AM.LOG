@@ -1,0 +1,12 @@
+Added Component: Designator=R7(RES0805)
+Added Component: Designator=S1(Push Button Switch SMD)
+Added Pin To Net: NetName=5V Pin=R7-2
+Added Pin To Net: NetName=GND Pin=S1-2
+Added Pin To Net: NetName=GND Pin=S1-2
+Added Pin To Net: NetName=NetR7_1 Pin=R7-1
+Added Pin To Net: NetName=NetR7_1 Pin=S1-1
+Added Pin To Net: NetName=NetR7_1 Pin=S1-1
+Added Pin To Net: NetName=NetR7_1 Pin=U2-29
+Added Net: Name=NetR7_1
+Added Member To Class: ClassName=Sheet1 Member=Component R7 1k
+Added Member To Class: ClassName=Sheet1 Member=Component S1
