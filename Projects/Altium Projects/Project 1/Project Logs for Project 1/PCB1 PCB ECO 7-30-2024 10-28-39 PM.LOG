@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=GND Pin=H3-1
+Removed Pin From Net: NetName=VIN Pin=H3-5
+Added Pin To Net: NetName=VIN Pin=H3-1
+Added Pin To Net: NetName=GND Pin=H3-5
+Added Member To Class: ClassName=Sheet1 Member=Component R8 1k

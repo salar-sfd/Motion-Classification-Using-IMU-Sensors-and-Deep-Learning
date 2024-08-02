@@ -49,6 +49,124 @@ CrossRefFollowFromMainSettings=1
 PrefsVaultGUID=
 PrefsRevisionGUID=
 
+[Document1]
+DocumentPath=Sheet1.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=AUSLWAGQ
+
+[Document2]
+DocumentPath=Project 1.SCHLIB
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=WEUPFLCT
+
+[Document3]
+DocumentPath=PCB3.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=HTFIYWHU
+
+[Document4]
+DocumentPath=PCB2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=HTFIYWHV
+
+[Document5]
+DocumentPath=PCB1.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=CCHFNBML
+
+[Document6]
+DocumentPath=Project 1.BomDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Project 1\Design Rule Check - PCB1.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for Project 1\Design Rule Check - PCB3.html
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Project 1\Move Component(s) Origin To Grid - PCB1.html
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for Project 1\Net Status - PCB1.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
@@ -191,7 +309,27 @@ OutputName1=Composite Drawing
 OutputDocumentPath1=
 OutputVariantName1=[No Variations]
 OutputDefault1=0
-PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=3.12|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration1_Name1=OutputConfigurationParameter1
+Configuration1_Item1=DesignatorDisplayMode=Physical|PrintArea=DesignExtent|PrintAreaLowerLeftCornerX=0|PrintAreaLowerLeftCornerY=0|PrintAreaUpperRightCornerX=0|PrintAreaUpperRightCornerY=0|Record=PcbPrintView|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name2=OutputConfigurationParameter2
+Configuration1_Item2=IncludeBoardCutouts=False|IncludeBottomLayerComponents=True|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=True|IncludeViewports=True|Index=0|Mirror=False|Name=Multilayer Composite Print|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name3=OutputConfigurationParameter3
+Configuration1_Item3=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=TopOverlay|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name4=OutputConfigurationParameter4
+Configuration1_Item4=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=TopLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name5=OutputConfigurationParameter5
+Configuration1_Item5=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=BottomLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name6=OutputConfigurationParameter6
+Configuration1_Item6=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MultiLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name7=OutputConfigurationParameter7
+Configuration1_Item7=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=BottomOverlay|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name8=OutputConfigurationParameter8
+Configuration1_Item8=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name9=OutputConfigurationParameter9
+Configuration1_Item9=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical13|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
+Configuration1_Name10=OutputConfigurationParameter10
+Configuration1_Item10=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical15|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
 OutputType2=Harness Layout Drawing Print
 OutputName2=Harness Layout Drawing Prints
 OutputDocumentPath2=
@@ -375,6 +513,22 @@ OutputDocumentPath1=
 OutputVariantName1=[No Variations]
 OutputDefault1=0
 PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration1_Name1=ColumnNameFormat
+Configuration1_Item1=CaptionAsName
+Configuration1_Name2=ForceUpdateSettings
+Configuration1_Item2=False
+Configuration1_Name3=General
+Configuration1_Item3=OpenExported=False|AddToProject=False|ReportBOMViolationsInMessages=False|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePcbData=False|IncludeVaultData=True|IncludeCloudData=False|IncludeDocumentData=True|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=|TemplateVaultGuid=|TemplateItemGuid=|TemplateRevisionGuid=|BatchMode=5|FormWidth=1200|FormHeight=710|SupplierProdQty=1|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=USD|SolutionsPerItem=1|SuppliersPerSolution=1|ViewType=0|UseDirectApi=False|BomSetName=
+Configuration1_Name4=GroupOrder
+Configuration1_Item4=
+Configuration1_Name5=VisibleOrder
+Configuration1_Item5=Line #=54|Comment=100|Description=100|Designator=142|Revision ID=79|Revision State=111|Revision Status=98|Quantity=67|Manufacturer 1=101|Manufacturer Part Number 1=170|Manufacturer Lifecycle 1=146|Supplier 1=74|Supplier Part Number 1=142|Supplier Unit Price 1=126|Supplier Subtotal 1=120
+Configuration1_Name6=VisibleOrder_Base
+Configuration1_Item6=Line #=54|Comment=100|Description=100|Designator=142|Revision ID=79|Revision State=111|Revision Status=98|Quantity=67|Manufacturer 1=101|Manufacturer Part Number 1=170|Manufacturer Lifecycle 1=146|Supplier 1=74|Supplier Part Number 1=142|Supplier Unit Price 1=126|Supplier Subtotal 1=120
+Configuration1_Name7=VisibleOrder_Consolidated
+Configuration1_Item7=Line #=100|Comment=100|Description=100|Designator=100|Revision ID=100|Revision State=100|Revision Status=100|Quantity=100|Manufacturer 1=101|Manufacturer Part Number 1=170|Manufacturer Lifecycle 1=146|Supplier 1=74|Supplier Part Number 1=142|Supplier Unit Price 1=126|Supplier Subtotal 1=120
+Configuration1_Name8=VisibleOrder_Flat
+Configuration1_Item8=Line #=100|Comment=100|Description=100|Designator=100|Revision ID=100|Revision State=100|Revision Status=100|Manufacturer 1=101|Manufacturer Part Number 1=170|Manufacturer Lifecycle 1=146|Supplier 1=74|Supplier Part Number 1=142|Supplier Unit Price 1=126|Supplier Subtotal 1=120
 OutputType2=BOM_ReportCompare
 OutputName2=BOM Compare
 OutputDocumentPath2=
@@ -386,6 +540,18 @@ OutputName3=Component Cross Reference Report
 OutputDocumentPath3=
 OutputVariantName3=[No Variations]
 OutputDefault3=0
+Configuration3_Name1=ColumnNameFormat
+Configuration3_Item1=CaptionAsName
+Configuration3_Name2=ForceUpdateSettings
+Configuration3_Item2=False
+Configuration3_Name3=General
+Configuration3_Item3=OpenExported=False|AddToProject=False|ReportBOMViolationsInMessages=False|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePcbData=False|IncludeVaultData=False|IncludeCloudData=False|IncludeDocumentData=True|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=|TemplateVaultGuid=|TemplateItemGuid=|TemplateRevisionGuid=|BatchMode=5|FormWidth=1200|FormHeight=710|SupplierProdQty=1|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=USD|SolutionsPerItem=1|SuppliersPerSolution=1|ViewType=0|UseDirectApi=False|BomSetName=
+Configuration3_Name4=GroupOrder
+Configuration3_Item4=Document=True
+Configuration3_Name5=SortOrder
+Configuration3_Item5=Document=Up|Designator=Up
+Configuration3_Name6=VisibleOrder
+Configuration3_Item6=Comment=120|Description=120|Designator=120|Footprint=120|LibRef=120|Quantity=120
 OutputType4=Export Comments
 OutputName4=Export Comments
 OutputDocumentPath4=
@@ -403,6 +569,10 @@ OutputName6=Report Project Hierarchy
 OutputDocumentPath6=
 OutputVariantName6=[No Variations]
 OutputDefault6=0
+Configuration6_Name1=ForceUpdateSettings
+Configuration6_Item1=False
+Configuration6_Name2=OutputConfigurationParameter1
+Configuration6_Item2=Record=ReportHierarchyView|ReportHierarchyMode=0|DocumentPath=I:\UT\Project\New Project\Projects\Altium Projects\Project 1\PCB1.PcbDoc
 OutputType7=Script
 OutputName7=Script Output
 OutputDocumentPath7=
@@ -988,6 +1158,78 @@ SelectedOnly=0
 UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
+ComponentLibIdentifierKind0=Library Name And Type
+ComponentLibraryIdentifier0=AMS1117-5.0.IntLib
+ComponentDesignItemID0=AMS1117-5.0
+ComponentSymbolReference0=AMS1117-5.0
+ComponentUpdate0=1
+ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=CAP0805.SchLib
+ComponentDesignItemID1=CAP0805
+ComponentSymbolReference1=CAP0805
+ComponentUpdate1=1
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=CH340G.IntLib
+ComponentDesignItemID2=CH340G
+ComponentSymbolReference2=CH340G
+ComponentUpdate2=1
+ComponentIsDeviceSheet2=0
+ComponentLibIdentifierKind3=Library Name And Type
+ComponentLibraryIdentifier3=Crystal SMD.SchLib
+ComponentDesignItemID3=Crystal SMD
+ComponentSymbolReference3=Crystal SMD
+ComponentUpdate3=1
+ComponentIsDeviceSheet3=0
+ComponentLibIdentifierKind4=Library Name And Type
+ComponentLibraryIdentifier4=LED_SMD_0805.SchLib
+ComponentDesignItemID4=LED_SMD_0805
+ComponentSymbolReference4=LED_SMD_0805
+ComponentUpdate4=1
+ComponentIsDeviceSheet4=0
+ComponentLibIdentifierKind5=Library Name And Type
+ComponentLibraryIdentifier5=Push Button Switch SMD.SchLib
+ComponentDesignItemID5=Push Button Switch SMD
+ComponentSymbolReference5=Push Button Switch SMD
+ComponentUpdate5=1
+ComponentIsDeviceSheet5=0
+ComponentLibIdentifierKind6=Library Name And Type
+ComponentLibraryIdentifier6=RES0805.SchLib
+ComponentDesignItemID6=RES0805
+ComponentSymbolReference6=RES0805
+ComponentUpdate6=1
+ComponentIsDeviceSheet6=0
+ComponentLibIdentifierKind7=Library Name And Type
+ComponentLibraryIdentifier7=TAJB475K025RNJ.IntLib
+ComponentDesignItemID7=TAJB475K025RNJ
+ComponentSymbolReference7=TAJB475K025RNJ
+ComponentUpdate7=1
+ComponentIsDeviceSheet7=0
+ComponentLibIdentifierKind8=Library Name And Type
+ComponentLibraryIdentifier8=USB MICRO USB_AB_BM_SHS.SchLib
+ComponentDesignItemID8=USB MICRO USB_AB_BM_SHS
+ComponentSymbolReference8=USB MICRO USB_AB_BM_SHS
+ComponentUpdate8=1
+ComponentIsDeviceSheet8=0
+ComponentLibIdentifierKind9=Vault Name
+ComponentLibraryIdentifier9=Altium Content Vault
+ComponentDesignItemID9=CMP-0095-00261-2
+ComponentSymbolReference9=MC-8B-ATM48-SQ32
+ComponentUpdate9=1
+ComponentIsDeviceSheet9=0
+ComponentLibIdentifierKind10=Vault Name
+ComponentLibraryIdentifier10=Altium Content Vault
+ComponentDesignItemID10=CMP-1055-00372-1
+ComponentSymbolReference10=ONSC-D-K1A2-2_A
+ComponentUpdate10=1
+ComponentIsDeviceSheet10=0
+ComponentLibIdentifierKind11=Vault Name
+ComponentLibraryIdentifier11=Altium Content Vault
+ComponentDesignItemID11=CMP-2100-03657-1
+ComponentSymbolReference11=INSE-MPU-9250-QFN-24
+ComponentUpdate11=1
+ComponentIsDeviceSheet11=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -1001,12 +1243,161 @@ RemoveParameters=0
 AddModels=1
 RemoveModels=1
 UpdateCurrentModels=1
+ParameterName0=Availability
+ParameterUpdate0=1
+ParameterName1=Case/Package
+ParameterUpdate1=1
+ParameterName2=Check_prices
+ParameterUpdate2=1
+ParameterName3=Code_JEDEC
+ParameterUpdate3=1
+ParameterName4=Comment
+ParameterUpdate4=1
+ParameterName5=Component Kind
+ParameterUpdate5=1
+ParameterName6=ComponentLink1Description
+ParameterUpdate6=1
+ParameterName7=ComponentLink1URL
+ParameterUpdate7=1
+ParameterName8=ComponentLink2Description
+ParameterUpdate8=1
+ParameterName9=ComponentLink2URL
+ParameterUpdate9=1
+ParameterName10=ComponentLink3Description
+ParameterUpdate10=1
+ParameterName11=ComponentLink3URL
+ParameterUpdate11=1
+ParameterName12=Configuration
+ParameterUpdate12=1
+ParameterName13=Datasheet URL
+ParameterUpdate13=1
+ParameterName14=Datasheet Version
+ParameterUpdate14=1
+ParameterName15=DatasheetVersion
+ParameterUpdate15=1
+ParameterName16=Description
+ParameterUpdate16=1
+ParameterName17=Height
+ParameterUpdate17=1
+ParameterName18=IFSM Max (A)
+ParameterUpdate18=1
+ParameterName19=Length
+ParameterUpdate19=1
+ParameterName20=Library Reference
+ParameterUpdate20=1
+ParameterName21=Manufacturer
+ParameterUpdate21=1
+ParameterName22=Manufacturer URL
+ParameterUpdate22=1
+ParameterName23=Max Operating Temperature
+ParameterUpdate23=1
+ParameterName24=Max Supply Voltage
+ParameterUpdate24=1
+ParameterName25=MF
+ParameterUpdate25=1
+ParameterName26=Min Operating Temperature
+ParameterUpdate26=1
+ParameterName27=Min Supply Voltage
+ParameterUpdate27=1
+ParameterName28=Mount
+ParameterUpdate28=1
+ParameterName29=Mounting Technology
+ParameterUpdate29=1
+ParameterName30=MP
+ParameterUpdate30=1
+ParameterName31=Package
+ParameterUpdate31=1
+ParameterName32=Package Description
+ParameterUpdate32=1
+ParameterName33=Package Quantity
+ParameterUpdate33=1
+ParameterName34=Package Reference
+ParameterUpdate34=1
+ParameterName35=PackageDescription
+ParameterUpdate35=1
+ParameterName36=PackageReference
+ParameterUpdate36=1
+ParameterName37=PackageVersion
+ParameterUpdate37=1
+ParameterName38=Packing
+ParameterUpdate38=1
+ParameterName39=PartNumber
+ParameterUpdate39=1
+ParameterName40=Price
+ParameterUpdate40=1
+ParameterName41=Purchase-URL
+ParameterUpdate41=1
+ParameterName42=RevisionNote
+ParameterUpdate42=1
+ParameterName43=RoHS
+ParameterUpdate43=1
+ParameterName44=RoHSCompliant
+ParameterUpdate44=1
+ParameterName45=SnapEDA_Link
+ParameterUpdate45=1
+ParameterName46=Value
+ParameterUpdate46=1
+ParameterName47=Width
+ParameterUpdate47=1
+ModelTypeGroup0=PCBLIB
+ModelTypeUpdate0=1
+ModelType0=PCBLIB
+ModelName0=32A_L
+ModelUpdate0=1
+ModelType1=PCBLIB
+ModelName1=32A_M
+ModelUpdate1=1
+ModelType2=PCBLIB
+ModelName2=32A_N
+ModelUpdate2=1
+ModelType3=PCBLIB
+ModelName3=CAP0805
+ModelUpdate3=1
+ModelType4=PCBLIB
+ModelName4=CAPMP3516X190N
+ModelUpdate4=1
+ModelType5=PCBLIB
+ModelName5=Crystal SMD
+ModelUpdate5=1
+ModelType6=PCBLIB
+ModelName6=INSE-QFN-24-1700X1540TP_L
+ModelUpdate6=1
+ModelType7=PCBLIB
+ModelName7=INSE-QFN-24-1700X1540TP_M
+ModelUpdate7=1
+ModelType8=PCBLIB
+ModelName8=INSE-QFN-24-1700X1540TP_N
+ModelUpdate8=1
+ModelType9=PCBLIB
+ModelName9=LED_SMD_0805
+ModelUpdate9=1
+ModelType10=PCBLIB
+ModelName10=ONSC-SMB-2-403A-03_V
+ModelUpdate10=1
+ModelType11=PCBLIB
+ModelName11=Push Button Switch SMD
+ModelUpdate11=1
+ModelType12=PCBLIB
+ModelName12=RES0805
+ModelUpdate12=1
+ModelType13=PCBLIB
+ModelName13=SOIC127P600X180-16N
+ModelUpdate13=1
+ModelType14=PCBLIB
+ModelName14=SOT229P700X180-4N
+ModelUpdate14=1
+ModelType15=PCBLIB
+ModelName15=USB MICRO USB_AB_BM_SHS
+ModelUpdate15=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0
 UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
+
+[NetInfos]
+Net1=NetName=GND|NetColor=$0075A19E
 
 [Comparison Options]
 ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0

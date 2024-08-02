@@ -1,0 +1,19 @@
+Replace Part BLUE1 LED_SMD_0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with LED_SMD_0805 from LED_SMD_0805.SchLib
+Replace Part C1 CAP0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with CAP0805 from CAP0805.SchLib
+Replace Part C2 CAP0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with CAP0805 from CAP0805.SchLib
+Update Managed Component D1 From CMP-1055-00372-1[SS24T3G] To CMP-1055-00372-1[SS24T3G] in Sheet1.SchDoc
+Replace Part GREEN1 LED_SMD_0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with LED_SMD_0805 from LED_SMD_0805.SchLib
+Replace Part R2 RES0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with RES0805 from RES0805.SchLib
+Replace Part R3 RES0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with RES0805 from RES0805.SchLib
+Replace Part R4 RES0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with RES0805 from RES0805.SchLib
+Replace Part R5 RES0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with RES0805 from RES0805.SchLib
+Replace Part R6 RES0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with RES0805 from RES0805.SchLib
+Replace Part RED1 LED_SMD_0805 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with LED_SMD_0805 from LED_SMD_0805.SchLib
+Replace Part S1 Push Button Switch SMD in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with Push Button Switch SMD from Push Button Switch SMD.SchLib
+Replace Part TC1 TAJB475K025RNJ in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with TAJB475K025RNJ from TAJB475K025RNJ.IntLib
+Replace Part U1 CH340G in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with CH340G from CH340G.IntLib
+Update Managed Component U2 From CMP-0095-00261-2[ATmega328-AU] To CMP-0095-00261-2[ATmega328-AU] in Sheet1.SchDoc
+Update Managed Component U3 From CMP-2100-03657-1[MPU-9250] To CMP-2100-03657-1[MPU-9250] in Sheet1.SchDoc
+Replace Part U? AMS1117-5.0 in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with AMS1117-5.0 from AMS1117-5.0.IntLib
+Replace Part USB1 USB MICRO USB_AB_BM_SHS in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with USB MICRO USB_AB_BM_SHS from USB MICRO USB_AB_BM_SHS.SchLib
+Replace Part Y? Crystal SMD in I:\UT\Project\New Project\Projects\Altium Projects\Project 1\Sheet1.SchDoc with Crystal SMD from Crystal SMD.SchLib

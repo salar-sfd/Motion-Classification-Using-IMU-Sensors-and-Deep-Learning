@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=VIN Pin=H1-1
+Removed Pin From Net: NetName=RESET Pin=H1-2
+Added Pin To Net: NetName=RESET Pin=H1-1
+Added Member To Class: ClassName=Sheet1 Member=Component R8 10k

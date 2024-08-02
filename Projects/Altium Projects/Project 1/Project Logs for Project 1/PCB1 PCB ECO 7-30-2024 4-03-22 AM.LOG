@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=5V Pin=POW-2
+Removed Pin From Net: NetName=GND Pin=R2-1
+Added Pin To Net: NetName=GND Pin=POW-1
+Added Pin To Net: NetName=5V Pin=R2-2
+Added Pin To Net: NetName=NetPOW_2 Pin=POW-2
+Added Pin To Net: NetName=NetPOW_2 Pin=R2-1
+Added Net: Name=NetPOW_2
+Added Member To Class: ClassName=Sheet1 Member=Component Y1 16MHz

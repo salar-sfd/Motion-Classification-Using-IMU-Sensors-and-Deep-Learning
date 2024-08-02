@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=D13 / SCK Pin=ATmega328-AU-7
+Removed Pin From Net: NetName=D13 / SCK Pin=C8-2
+Removed Pin From Net: NetName=D13 / SCK Pin=Y1-2
+Added Pin To Net: NetName=NetATmega328-AU_7 Pin=ATmega328-AU-7
+Added Pin To Net: NetName=NetATmega328-AU_7 Pin=C8-2
+Added Pin To Net: NetName=NetATmega328-AU_7 Pin=Y1-2
+Added Net: Name=NetATmega328-AU_7
+Added Member To Class: ClassName=Sheet1 Member=Component R8 10k

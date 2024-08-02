@@ -1,0 +1,25 @@
+Added Component: Designator=C6(CAP0805)
+Added Component: Designator=C7(CAP0805)
+Added Component: Designator=C8(CAP0805)
+Added Component: Designator=C9(CAP0805)
+Added Pin To Net: NetName=D13 / SCK Pin=ATmega328-AU-7
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=GND Pin=C8-1
+Added Pin To Net: NetName=D13 / SCK Pin=C8-2
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=NetATmega328-AU_8 Pin=C9-2
+Added Pin To Net: NetName=D13 / SCK Pin=Y1-2
+Added Pin To Net: NetName=NetC6_2 Pin=C6-2
+Added Pin To Net: NetName=NetC6_2 Pin=CH340G-8
+Added Pin To Net: NetName=NetC6_2 Pin=Y2-2
+Added Net: Name=NetC6_2
+Added Pin To Net: NetName=NetC7_2 Pin=C7-2
+Added Pin To Net: NetName=NetC7_2 Pin=CH340G-7
+Added Pin To Net: NetName=NetC7_2 Pin=Y2-1
+Added Net: Name=NetC7_2
+Added Member To Class: ClassName=Sheet1 Member=Component ATmega328-AU
+Added Member To Class: ClassName=Sheet1 Member=Component C6 22pF
+Added Member To Class: ClassName=Sheet1 Member=Component C7 22pF
+Added Member To Class: ClassName=Sheet1 Member=Component C8 22pF
+Added Member To Class: ClassName=Sheet1 Member=Component C9 22pF

@@ -1,0 +1,64 @@
+Change Component Comment : Designator=C1 Old Comment=2nF New Comment=0.1uF
+Change Component Comment : Designator=R2 Old Comment=k1 New Comment=1k
+Change Component Comment : Designator=R3 Old Comment=k1 New Comment=1k
+Change Component Comment : Designator=R4 Old Comment=k1 New Comment=1k
+Change Component Comment : Designator=R5 Old Comment=k1 New Comment=330
+Change Component Comment : Designator=R6 Old Comment=k1 New Comment=330
+Added Component: Designator=C3(CAP0805)
+Added Component: Designator=C4(CAP0805)
+Added Component: Designator=C5(CAP0805)
+Added Component: Designator=TC2(CAPMP3516X190N)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TAJB475K025RNJ/AVX/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "AVX"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TAJB475K025RNJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "1411 AVX Corporation"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/TAJB475K025RNJ/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TAJB475K025RNJ/AVX/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Y2(Crystal SMD)
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=5V Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=5V Pin=TC2-1
+Added Pin To Net: NetName=GND Pin=TC2-2
+Added Pin To Net: NetName=5V Pin=U1-16
+Added Pin To Net: NetName=5V Pin=U2-4
+Added Pin To Net: NetName=5V Pin=U2-6
+Added Pin To Net: NetName=5V Pin=U2-18
+Added Pin To Net: NetName=3.3V Pin=C3-2
+Added Pin To Net: NetName=3.3V Pin=U1-4
+Added Net: Name=3.3V
+Added Pin To Net: NetName=A0 Pin=U2-23
+Added Net: Name=A0
+Added Pin To Net: NetName=A1 Pin=U2-24
+Added Net: Name=A1
+Added Pin To Net: NetName=A2 Pin=U2-25
+Added Net: Name=A2
+Added Pin To Net: NetName=A3 Pin=U2-26
+Added Net: Name=A3
+Added Pin To Net: NetName=A4 Pin=U2-27
+Added Net: Name=A4
+Added Pin To Net: NetName=A5 Pin=U2-28
+Added Net: Name=A5
+Added Pin To Net: NetName=A6 Pin=U2-19
+Added Net: Name=A6
+Added Pin To Net: NetName=A7 Pin=U2-22
+Added Net: Name=A7
+Added Pin To Net: NetName=NetC5_2 Pin=C5-2
+Added Pin To Net: NetName=NetC5_2 Pin=U2-20
+Added Net: Name=NetC5_2
+Added Pin To Net: NetName=NetU1_7 Pin=U1-7
+Added Pin To Net: NetName=NetU1_7 Pin=Y2-1
+Added Net: Name=NetU1_7
+Added Pin To Net: NetName=NetU1_8 Pin=U1-8
+Added Pin To Net: NetName=NetU1_8 Pin=Y2-2
+Added Net: Name=NetU1_8
+Added Member To Class: ClassName=Sheet1 Member=Component C3 0.1uF
+Added Member To Class: ClassName=Sheet1 Member=Component C4 0.1uF
+Added Member To Class: ClassName=Sheet1 Member=Component C5 0.1uF
+Added Member To Class: ClassName=Sheet1 Member=Component TC2 4.7uF
+Added Member To Class: ClassName=Sheet1 Member=Component Y2 12MHz
+Added Rule: Name=Schematic Supply Nets_2

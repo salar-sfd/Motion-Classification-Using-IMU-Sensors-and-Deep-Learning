@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=RESET Pin=H3-3
+Removed Pin From Net: NetName=5V Pin=H3-4
+Removed Pin From Net: NetName=A7 Pin=H3-5
+Removed Pin From Net: NetName=3.3V Pin=H3-6
+Added Pin To Net: NetName=5V Pin=H3-3
+Added Pin To Net: NetName=3.3V Pin=H3-4
+Added Pin To Net: NetName=RESET Pin=H3-6

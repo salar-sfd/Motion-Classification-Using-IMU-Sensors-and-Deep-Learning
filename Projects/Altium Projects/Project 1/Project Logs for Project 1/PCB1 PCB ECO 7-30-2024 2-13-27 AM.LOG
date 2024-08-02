@@ -1,0 +1,4 @@
+Change Component Comment : Designator=BLUE1 Old Comment=LED_SMD_0805 New Comment=
+Change Component Comment : Designator=GREEN1 Old Comment=LED_SMD_0805 New Comment=
+Added Pin To Net: NetName=NetR7_1 Pin=C2-2
+Change Net Name : Old Net Name=NetR7_1 New Net Name=RESET
