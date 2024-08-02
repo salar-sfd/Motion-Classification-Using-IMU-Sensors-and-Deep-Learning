@@ -1,5 +1,7 @@
 %% Connection
 clc, clear, close all;
+load('../../models/BBX/net.mat', 'net', 'class_names');
+
 if(exist('bt', 'var') == 0)
     bt = bluetooth('MPU9250'); 
 end
@@ -55,18 +57,10 @@ threshold_rise = 5000;
 threshold_fall = 800;
 threshold = threshold_rise*[accel_var, gyro_var];
 
-
-class_names = ['-', 'a', 'b', 'c', 'd', 'e'];
-N_class = length(class_names);
-class_counter = 0;
-
-X_train = cell(0);
-y_train = [];
-
 flushinput(bt);
 t0 = tic;
 
-while toc(t0)<15
+while toc(t0)<400
     %
     for i=1:spr
         data = fgetl(bt);
@@ -86,7 +80,6 @@ while toc(t0)<15
     if(length(t_list)>window_size)
         accel_var_list = [accel_var_list; var(accel_list(end-window_size+1:end, :))];
         gyro_var_list = [gyro_var_list; var(gyro_list(end-window_size+1:end, :))];
-        disp(class_names(class_counter+1));
     
         if(any(var([accel_list(end-window_size+1:end, :), gyro_list(end-window_size+1:end, :)])>threshold))
             if(length(flag_list)>=2)
@@ -99,9 +92,9 @@ while toc(t0)<15
         else
             if(length(flag_list)>=2)
                 if(flag_list(end)==1)
-                    X_train = [X_train; [accel_list(start_index:end, :), gyro_list(start_index:end, :), t_list(start_index:end, :)]];
-                    y_train = [y_train, class_counter];
-                    class_counter = mod(class_counter+1, N_class);
+                    x = [accel_list(start_index:end, :), gyro_list(start_index:end, :)]';
+                    y = classify(net, x);
+                    disp(class_names(y));
                 end
             end
             flag_list = [flag_list, 0];
@@ -112,26 +105,3 @@ while toc(t0)<15
     flushinput(bt);
 end
 
-%% Plotting
-subplot(4, 1, 1);
-plot([accel_var_list'; gyro_var_list'; flag_list]');
-subplot(4, 1, 2);
-plot([accel_list'; gyro_list']');
-subplot(4, 1, 3);
-s = X_train{1};
-plot(s(:, 1:6));
-subplot(4, 1, 4);
-s = X_train{2};
-plot(s(:, 1:6));
-
-%% Saving
-file_name = 'TrainSet1.mat';
-full_path = ['../../datasets/BBX/', file_name];
-if(exist(full_path, 'file'))
-    temp_X_train = X_train;
-    temp_y_train = y_train;
-    load(full_path, 'X_train', 'y_train', 'class_names');
-    X_train = [X_train; temp_X_train];
-    y_train = [y_train, temp_y_train];
-end
-save(full_path, 'X_train', 'y_train', 'class_names');
