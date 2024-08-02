@@ -34,7 +34,7 @@ gyro_list = gyro_list - gyro_bias;
 
 disp('Calibration finished.');
 
-%% Data Acindexuisition
+%% Data Acquisition
 accel_list = [];
 gyro_list = [];
 t_list = [];

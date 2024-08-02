@@ -1,6 +1,5 @@
-%% c
 %% Connecting Arduino
-% clc, clear, close all;
+clc, clear, close all;
 
 fs = 100;
 spr = 1;

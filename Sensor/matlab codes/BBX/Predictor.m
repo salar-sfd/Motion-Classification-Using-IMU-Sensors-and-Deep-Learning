@@ -1,5 +1,5 @@
 %% Connection
-clc, clear, close all;
+% clc, clear, close all;
 load('../../datasets/BBX/net.mat', 'net', 'class_names');
 
 if(exist('bt', 'var') == 0)
@@ -23,7 +23,7 @@ while(toc(t0)<calibrationTime)
     
     accel_list = [accel_list; accel];
     gyro_list = [gyro_list; gyro];
-    t_list = [t_list; t];
+    t_list = [t_list, t];
 end
 fs = length(t_list)/calibrationTime;
 accel_var = var(accel_list);
