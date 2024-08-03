@@ -1,0 +1,49 @@
+Remove Pin=5V Reg-3 From Net=VIN
+Remove Pin=ATmega328-AU-1 From Net=D3
+Remove Pin=ATmega328-AU-2 From Net=D4
+Remove Pin=ATmega328-AU-9 From Net=D5
+Remove Pin=ATmega328-AU-10 From Net=D6
+Remove Pin=ATmega328-AU-11 From Net=D7
+Remove Pin=ATmega328-AU-12 From Net=D8
+Remove Pin=ATmega328-AU-13 From Net=D9
+Remove Pin=ATmega328-AU-14 From Net=D10
+Remove Pin=ATmega328-AU-15 From Net=D11 / MOSI
+Remove Pin=ATmega328-AU-16 From Net=D12 / MISO
+Remove Pin=ATmega328-AU-19 From Net=A6
+Remove Pin=ATmega328-AU-22 From Net=A7
+Remove Pin=ATmega328-AU-23 From Net=A0
+Remove Pin=ATmega328-AU-24 From Net=A1
+Remove Pin=ATmega328-AU-25 From Net=A2
+Remove Pin=ATmega328-AU-26 From Net=A3
+Remove Pin=ATmega328-AU-27 From Net=A4
+Remove Pin=ATmega328-AU-28 From Net=A5
+Remove Pin=ATmega328-AU-32 From Net=D2
+Remove Pin=C2-2 From Net=RESET
+Remove Pin=H1-1 From Net=RESET
+Remove Pin=H1-2 From Net=D2
+Remove Pin=H1-3 From Net=D3
+Remove Pin=H1-6 From Net=D0 / Rx
+Remove Pin=H1-7 From Net=D1 / Tx
+Remove Pin=H1-8 From Net=D4
+Remove Pin=H2-1 From Net=D5
+Remove Pin=H2-2 From Net=D6
+Remove Pin=H2-3 From Net=D7
+Remove Pin=H2-4 From Net=D8
+Remove Pin=H2-5 From Net=D9
+Remove Pin=H2-6 From Net=D10
+Remove Pin=H2-7 From Net=D11 / MOSI
+Remove Pin=H2-8 From Net=D12 / MISO
+Remove Pin=H3-1 From Net=RESET
+Remove Pin=H3-2 From Net=VIN
+Remove Pin=H3-7 From Net=A5
+Remove Pin=H3-8 From Net=A4
+Remove Pin=H4-1 From Net=A3
+Remove Pin=H4-2 From Net=A2
+Remove Pin=H4-3 From Net=A1
+Remove Pin=H4-4 From Net=A0
+Remove Pin=H4-5 From Net=A7
+Remove Pin=H4-6 From Net=AREF
+Remove Pin=H4-7 From Net=A6
+Remove Pin=H4-8 From Net=D13 / SCK
+Change Component Designator: OldDesignator=ATmega328-AU NewDesignator=328
+Change Net Color : Net Name= GND Old Net Color=RGB(158, 161, 117) New Net Color=Default

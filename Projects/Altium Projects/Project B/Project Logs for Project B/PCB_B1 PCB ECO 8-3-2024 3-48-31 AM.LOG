@@ -1,0 +1,54 @@
+Added Component: Designator=C13(CAP0805)
+Added Component: Designator=C14(CAP0805)
+Added Component: Designator=CH(LED_SMD_0805)
+Added Component: Designator=FU(LED_SMD_0805)
+Added Component: Designator=R14(RES0805)
+Added Component: Designator=R15(RES0805)
+Added Component: Designator=R16(RES0805)
+Added Component: Designator=R17(RES0805)
+Added Component: Designator=TPU(SOIC127P600X175-9N)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TP4056-42-ESOP8/Lite-On/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Lite-On Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TP4056-42-ESOP8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TP4056-42-ESOP8/Lite-On/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C13-2
+Added Pin To Net: NetName=GND Pin=C14-1
+Added Pin To Net: NetName=VIN Pin=C14-2
+Added Pin To Net: NetName=VCC Pin=R14-2
+Added Pin To Net: NetName=GND Pin=R17-1
+Added Pin To Net: NetName=GND Pin=TPU-1
+Added Pin To Net: NetName=GND Pin=TPU-3
+Added Pin To Net: NetName=VIN Pin=TPU-5
+Added Pin To Net: NetName=NetC13_1 Pin=C13-1
+Added Pin To Net: NetName=NetC13_1 Pin=CH-2
+Added Pin To Net: NetName=NetC13_1 Pin=FU-2
+Added Pin To Net: NetName=NetC13_1 Pin=R14-1
+Added Pin To Net: NetName=NetC13_1 Pin=TPU-4
+Added Pin To Net: NetName=NetC13_1 Pin=TPU-8
+Added Net: Name=NetC13_1
+Added Pin To Net: NetName=NetCH_1 Pin=CH-1
+Added Pin To Net: NetName=NetCH_1 Pin=R15-1
+Added Net: Name=NetCH_1
+Added Pin To Net: NetName=NetFU_1 Pin=FU-1
+Added Pin To Net: NetName=NetFU_1 Pin=R16-2
+Added Net: Name=NetFU_1
+Added Pin To Net: NetName=NetR15_2 Pin=R15-2
+Added Pin To Net: NetName=NetR15_2 Pin=TPU-7
+Added Net: Name=NetR15_2
+Added Pin To Net: NetName=NetR16_1 Pin=R16-1
+Added Pin To Net: NetName=NetR16_1 Pin=TPU-6
+Added Net: Name=NetR16_1
+Added Pin To Net: NetName=NetR17_2 Pin=R17-2
+Added Pin To Net: NetName=NetR17_2 Pin=TPU-2
+Added Net: Name=NetR17_2
+Added Member To Class: ClassName=Sheet_B1 Member=Component C13 10uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C14 10uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component CH
+Added Member To Class: ClassName=Sheet_B1 Member=Component FU
+Added Member To Class: ClassName=Sheet_B1 Member=Component R14 0.4
+Added Member To Class: ClassName=Sheet_B1 Member=Component R15 1k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R16 1k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R17 1.2k
+Added Member To Class: ClassName=Sheet_B1 Member=Component TPU

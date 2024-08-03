@@ -1,0 +1,58 @@
+Removed Pin From Net: NetName=GND Pin=5V Reg-1
+Removed Pin From Net: NetName=5V Pin=5V Reg-2
+Removed Pin From Net: NetName=VIN Pin=5V Reg-3
+Added Component: Designator=3.3Reg(SOT229P700X180-4N)
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/AMS1117-3.3/Advanced+Monolithic+Systems/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Advanced Monolithic Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "AMS1117-3.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOT-223 Seeed Technology"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/AMS1117-3.3/Advanced+Monolithic+Systems/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=3.3Reg-1
+Added Pin To Net: NetName=5V Pin=3.3Reg-2
+Added Pin To Net: NetName=VIN Pin=3.3Reg-3
+Change Net Name : Old Net Name=NetATmega328-AU_7 New Net Name=Net328_7
+Change Net Name : Old Net Name=NetATmega328-AU_8 New Net Name=Net328_8
+Added Member To Class: ClassName=Sheet_B1 Member=Component 3.3Reg AMS1117-3.3
+Added Member To Class: ClassName=Sheet_B1 Member=Component 328
+Added Member To Class: ClassName=Sheet_B1 Member=Component C1 0.1uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C2 0.1uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C3 0.1uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C4 0.1uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C5 0.1uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C6 22pF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C7 22pF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C8 22pF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C9 22pF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C10 0.01uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C11 0.1uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component C12 0.1uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component CH340G
+Added Member To Class: ClassName=Sheet_B1 Member=Component H1
+Added Member To Class: ClassName=Sheet_B1 Member=Component H2
+Added Member To Class: ClassName=Sheet_B1 Member=Component H3
+Added Member To Class: ClassName=Sheet_B1 Member=Component H4
+Added Member To Class: ClassName=Sheet_B1 Member=Component L
+Added Member To Class: ClassName=Sheet_B1 Member=Component ON
+Added Member To Class: ClassName=Sheet_B1 Member=Component R2 1k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R3 1k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R4 1k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R5 330
+Added Member To Class: ClassName=Sheet_B1 Member=Component R6 330
+Added Member To Class: ClassName=Sheet_B1 Member=Component R7 1k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R8 10k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R9 10k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R10 10k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R11 10k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R12 10k
+Added Member To Class: ClassName=Sheet_B1 Member=Component R13 1k
+Added Member To Class: ClassName=Sheet_B1 Member=Component RX
+Added Member To Class: ClassName=Sheet_B1 Member=Component S1
+Added Member To Class: ClassName=Sheet_B1 Member=Component TC1 4.7u
+Added Member To Class: ClassName=Sheet_B1 Member=Component TC2 4.7uF
+Added Member To Class: ClassName=Sheet_B1 Member=Component TX
+Added Member To Class: ClassName=Sheet_B1 Member=Component USB1 USB MICRO USB_AB_BM_SHS
+Added Member To Class: ClassName=Sheet_B1 Member=Component Y1 16MHz
+Added Member To Class: ClassName=Sheet_B1 Member=Component Y2 12MHz

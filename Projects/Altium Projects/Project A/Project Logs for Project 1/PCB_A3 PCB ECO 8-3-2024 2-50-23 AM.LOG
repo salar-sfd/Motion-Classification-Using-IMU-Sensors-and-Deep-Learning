@@ -1,0 +1,46 @@
+Added Component: Designator=ATmega328-AU(32A_L)
+Add component (AddParameter): Name = "Code_JEDEC"; Value = "MS-026-ABA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.atmel.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "ATmega48A/48PA/88A/88PA/168A/168PA/328/328P Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.atmel.com/dyn/resources/prod_documents/doc8271.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "ATmega48A/48PA/88A/88PA/168A/168PA/328/328P Summary"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.atmel.com/dyn/resources/prod_documents/8271S.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "revD, May-2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "32-Lead, 7x7x1.0 mm Body, 0.8mm Lead Pitch, Thin Profile Plastic Quad Flat Package (TQFP)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "32A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "revC, Oct-2010"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RevisionNote"; Value = "DatasheetVersion & PackageVersion updated. URLs added."; VariantName = "[No Variations]"
+Added Pin To Net: NetName=D3 Pin=ATmega328-AU-1
+Added Pin To Net: NetName=D4 Pin=ATmega328-AU-2
+Added Pin To Net: NetName=GND Pin=ATmega328-AU-3
+Added Pin To Net: NetName=5V Pin=ATmega328-AU-4
+Added Pin To Net: NetName=GND Pin=ATmega328-AU-5
+Added Pin To Net: NetName=5V Pin=ATmega328-AU-6
+Added Pin To Net: NetName=NetATmega328-AU_7 Pin=ATmega328-AU-7
+Added Pin To Net: NetName=NetATmega328-AU_8 Pin=ATmega328-AU-8
+Added Pin To Net: NetName=D5 Pin=ATmega328-AU-9
+Added Pin To Net: NetName=D6 Pin=ATmega328-AU-10
+Added Pin To Net: NetName=D7 Pin=ATmega328-AU-11
+Added Pin To Net: NetName=D8 Pin=ATmega328-AU-12
+Added Pin To Net: NetName=D9 Pin=ATmega328-AU-13
+Added Pin To Net: NetName=D10 Pin=ATmega328-AU-14
+Added Pin To Net: NetName=D11 / MOSI Pin=ATmega328-AU-15
+Added Pin To Net: NetName=D12 / MISO Pin=ATmega328-AU-16
+Added Pin To Net: NetName=D13 / SCK Pin=ATmega328-AU-17
+Added Pin To Net: NetName=5V Pin=ATmega328-AU-18
+Added Pin To Net: NetName=A6 Pin=ATmega328-AU-19
+Added Pin To Net: NetName=AREF Pin=ATmega328-AU-20
+Added Pin To Net: NetName=GND Pin=ATmega328-AU-21
+Added Pin To Net: NetName=A7 Pin=ATmega328-AU-22
+Added Pin To Net: NetName=A0 Pin=ATmega328-AU-23
+Added Pin To Net: NetName=A1 Pin=ATmega328-AU-24
+Added Pin To Net: NetName=A2 Pin=ATmega328-AU-25
+Added Pin To Net: NetName=A3 Pin=ATmega328-AU-26
+Added Pin To Net: NetName=A4 Pin=ATmega328-AU-27
+Added Pin To Net: NetName=A5 Pin=ATmega328-AU-28
+Added Pin To Net: NetName=RESET Pin=ATmega328-AU-29
+Added Pin To Net: NetName=D0 / Rx Pin=ATmega328-AU-30
+Added Pin To Net: NetName=D1 / Tx Pin=ATmega328-AU-31
+Added Pin To Net: NetName=D2 Pin=ATmega328-AU-32
+Added Member To Class: ClassName=Sheet_A1 Member=Component ATmega328-AU

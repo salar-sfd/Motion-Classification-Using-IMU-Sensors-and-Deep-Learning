@@ -1,0 +1,183 @@
+Removed Member From Class: ClassName=Sheet1 Member=5V Reg
+Change Component Designator: OldDesignator=328 NewDesignator=ATmega328-AU
+Added Component: Designator=3.3Reg(SOT229P700X180-4N)
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/AMS1117-3.3/Advanced+Monolithic+Systems/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Advanced Monolithic Systems"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "AMS1117-3.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOT-223 Seeed Technology"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/AMS1117-3.3/Advanced+Monolithic+Systems/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=ATmega328-AU(32A_L)
+Added Component: Designator=C1(CAP0805)
+Added Component: Designator=C2(CAP0805)
+Added Component: Designator=C3(CAP0805)
+Added Component: Designator=C4(CAP0805)
+Added Component: Designator=C5(CAP0805)
+Added Component: Designator=C6(CAP0805)
+Added Component: Designator=C7(CAP0805)
+Added Component: Designator=C8(CAP0805)
+Added Component: Designator=C9(CAP0805)
+Added Component: Designator=C10(CAP0805)
+Added Component: Designator=C11(CAP0805)
+Added Component: Designator=C12(CAP0805)
+Added Component: Designator=CH340G(SOIC127P600X180-16N)
+Add component (AddParameter): Name = "Availability"; Value = "Not in stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/Ch340G/WCH/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "WCH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "Ch340G"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/Ch340G/WCH/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=D1(ONSC-SMB-2-403A-03_V)
+Added Component: Designator=H1(Header 8)
+Added Component: Designator=H2(Header 8)
+Added Component: Designator=H3(Header 8)
+Added Component: Designator=H4(Header 8)
+Added Component: Designator=L(LED_SMD_0805)
+Added Component: Designator=ON(LED_SMD_0805)
+Added Component: Designator=R2(RES0805)
+Added Component: Designator=R3(RES0805)
+Added Component: Designator=R4(RES0805)
+Added Component: Designator=R5(RES0805)
+Added Component: Designator=R6(RES0805)
+Added Component: Designator=R7(RES0805)
+Added Component: Designator=R8(RES0805)
+Added Component: Designator=R9(RES0805)
+Added Component: Designator=R10(RES0805)
+Added Component: Designator=R11(RES0805)
+Added Component: Designator=R12(RES0805)
+Added Component: Designator=R13(RES0805)
+Added Component: Designator=RX(LED_SMD_0805)
+Added Component: Designator=S1(Push Button Switch SMD)
+Added Component: Designator=TC1(CAPMP3516X190N)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TAJB475K025RNJ/AVX/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "AVX"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TAJB475K025RNJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "1411 AVX Corporation"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/TAJB475K025RNJ/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TAJB475K025RNJ/AVX/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=TC2(CAPMP3516X190N)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TAJB475K025RNJ/AVX/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "AVX"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TAJB475K025RNJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "1411 AVX Corporation"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/TAJB475K025RNJ/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TAJB475K025RNJ/AVX/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=TX(LED_SMD_0805)
+Added Component: Designator=U3(INSE-QFN-24-1700X1540TP_M)
+Added Component: Designator=USB1(USB MICRO USB_AB_BM_SHS)
+Added Component: Designator=Y1(Crystal SMD)
+Added Component: Designator=Y2(Crystal SMD)
+Added Pin To Net: NetName=GND Pin=3.3Reg-1
+Added Pin To Net: NetName=5V Pin=3.3Reg-2
+Added Pin To Net: NetName=VIN Pin=3.3Reg-3
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=RESET Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=3.3V Pin=C3-2
+Added Pin To Net: NetName=5V Pin=C4-1
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=AREF Pin=C5-2
+Added Pin To Net: NetName=GND Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=GND Pin=C8-1
+Added Pin To Net: NetName=GND Pin=C9-1
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=3.3V Pin=C10-2
+Added Pin To Net: NetName=GND Pin=C11-1
+Added Pin To Net: NetName=3.3V Pin=C11-2
+Added Pin To Net: NetName=GND Pin=C12-2
+Added Pin To Net: NetName=GND Pin=CH340G-1
+Added Pin To Net: NetName=3.3V Pin=CH340G-4
+Added Pin To Net: NetName=5V Pin=CH340G-16
+Added Pin To Net: NetName=RESET Pin=H1-1
+Added Pin To Net: NetName=D2 Pin=H1-2
+Added Pin To Net: NetName=D3 Pin=H1-3
+Added Pin To Net: NetName=5V Pin=H1-4
+Added Pin To Net: NetName=GND Pin=H1-5
+Added Pin To Net: NetName=D0 / Rx Pin=H1-6
+Added Pin To Net: NetName=D1 / Tx Pin=H1-7
+Added Pin To Net: NetName=D4 Pin=H1-8
+Added Pin To Net: NetName=D5 Pin=H2-1
+Added Pin To Net: NetName=D6 Pin=H2-2
+Added Pin To Net: NetName=D7 Pin=H2-3
+Added Pin To Net: NetName=D8 Pin=H2-4
+Added Pin To Net: NetName=D9 Pin=H2-5
+Added Pin To Net: NetName=D10 Pin=H2-6
+Added Pin To Net: NetName=D11 / MOSI Pin=H2-7
+Added Pin To Net: NetName=D12 / MISO Pin=H2-8
+Added Pin To Net: NetName=RESET Pin=H3-1
+Added Pin To Net: NetName=VIN Pin=H3-2
+Added Pin To Net: NetName=GND Pin=H3-3
+Added Pin To Net: NetName=3.3V Pin=H3-6
+Added Pin To Net: NetName=A5 Pin=H3-7
+Added Pin To Net: NetName=A4 Pin=H3-8
+Added Pin To Net: NetName=A3 Pin=H4-1
+Added Pin To Net: NetName=A2 Pin=H4-2
+Added Pin To Net: NetName=A1 Pin=H4-3
+Added Pin To Net: NetName=A0 Pin=H4-4
+Added Pin To Net: NetName=A7 Pin=H4-5
+Added Pin To Net: NetName=AREF Pin=H4-6
+Added Pin To Net: NetName=A6 Pin=H4-7
+Added Pin To Net: NetName=D13 / SCK Pin=H4-8
+Added Pin To Net: NetName=GND Pin=L-1
+Added Pin To Net: NetName=GND Pin=ON-1
+Added Pin To Net: NetName=5V Pin=R2-2
+Added Pin To Net: NetName=D1 / Tx Pin=R3-2
+Added Pin To Net: NetName=D0 / Rx Pin=R4-2
+Added Pin To Net: NetName=5V Pin=R5-2
+Added Pin To Net: NetName=5V Pin=R6-2
+Added Pin To Net: NetName=RESET Pin=R7-1
+Added Pin To Net: NetName=5V Pin=R7-2
+Added Pin To Net: NetName=A4 Pin=R8-1
+Added Pin To Net: NetName=3.3V Pin=R8-2
+Added Pin To Net: NetName=A5 Pin=R9-1
+Added Pin To Net: NetName=3.3V Pin=R9-2
+Added Pin To Net: NetName=GND Pin=R10-2
+Added Pin To Net: NetName=GND Pin=R11-1
+Added Pin To Net: NetName=3.3V Pin=R12-2
+Added Pin To Net: NetName=D13 / SCK Pin=R13-1
+Added Pin To Net: NetName=D1 / Tx Pin=RX-1
+Added Pin To Net: NetName=RESET Pin=S1-1
+Added Pin To Net: NetName=RESET Pin=S1-1
+Added Pin To Net: NetName=GND Pin=S1-2
+Added Pin To Net: NetName=GND Pin=S1-2
+Added Pin To Net: NetName=GND Pin=TC1-2
+Added Pin To Net: NetName=5V Pin=TC2-1
+Added Pin To Net: NetName=GND Pin=TC2-2
+Added Pin To Net: NetName=D0 / Rx Pin=TX-1
+Added Pin To Net: NetName=GND Pin=USB1-5
+Added Pin To Net: NetName=GND Pin=USB1-5
+Added Pin To Net: NetName=GND Pin=USB1-5
+Change Net Color : Old Net Color=RGB(158, 161, 117) New Net Color=RGB(158, 161, 117)
+Add Net: Net with name "NetATmega328-AU_7" already exists
+Add Net: Net with name "NetATmega328-AU_8" already exists
+Add Net: Net with name "NetC1_2" already exists
+Add Net: Net with name "NetC2_1" already exists
+Add Net: Net with name "NetC6_2" already exists
+Add Net: Net with name "NetC7_2" already exists
+Add Net: Net with name "NetC12_1" already exists
+Add Net: Net with name "NetCH340G_2" already exists
+Add Net: Net with name "NetCH340G_3" already exists
+Add Net: Net with name "NetCH340G_5" already exists
+Add Net: Net with name "NetCH340G_6" already exists
+Add Net: Net with name "NetL_2" already exists
+Add Net: Net with name "NetON_2" already exists
+Add Net: Net with name "NetR5_1" already exists
+Add Net: Net with name "NetR6_1" already exists
+Add Net: Net with name "NetR10_1" already exists
+Add Net: Net with name "NetR11_2" already exists
+Add Net: Net with name "NetR12_1" already exists
+Change Class Name : Old Net Name=Sheet1 New Net Name=Sheet_B1
+Added Class: Name=Sheet_A1
+Added Member To Class: ClassName=Sheet_B1 Member=Component 3.3Reg AMS1117-3.3
