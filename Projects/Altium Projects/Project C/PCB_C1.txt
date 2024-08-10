@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : I:\UT\Project\IMU Project\Projects\Altium Projects\Project C\PCB_C1.PcbDoc
+Date         : 8/8/2024
+Time         : 11:19:59 AM
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 137
+    Connections routed, 137
+    Connections remaining, 0
+count : 4

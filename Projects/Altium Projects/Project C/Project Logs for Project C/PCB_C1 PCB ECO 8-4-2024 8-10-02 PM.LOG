@@ -1,0 +1,4 @@
+Added Component: Designator=C15(CAP0805)
+Added Pin To Net: NetName=GND Pin=C15-1
+Added Pin To Net: NetName=3.3v Pin=C15-2
+Added Member To Class: ClassName=Sheet_C1 Member=Component C15 0.1uF

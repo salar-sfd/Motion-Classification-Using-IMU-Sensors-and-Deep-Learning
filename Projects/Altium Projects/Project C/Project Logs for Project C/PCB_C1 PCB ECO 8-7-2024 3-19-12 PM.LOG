@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=3.3v Pin=3.3V-pt
+Removed Pin From Net: NetName=GND Pin=H3-1
+Change Component Designator: OldDesignator=ATmega328 NewDesignator=328
+Add Pin To Net: Unknown Pin: Pin 3.3V-2
+Added Member To Class: ClassName=Sheet_C1 Member=Component 328

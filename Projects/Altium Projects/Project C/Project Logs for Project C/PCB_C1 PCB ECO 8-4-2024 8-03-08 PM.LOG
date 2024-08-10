@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=GND Pin=C3-1
+Removed Pin From Net: NetName=VCC Pin=D1-1
+Removed Pin From Net: NetName=NetC1_2 Pin=D1-2
+Removed Member From Class: ClassName=Sheet_B1 Member=D1
+Added Component: Designator=C15(CAP0805)
+Added Pin To Net: NetName=VIN Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=VCC Pin=C10-2
+Added Pin To Net: NetName=VCC Pin=C11-2
+Added Pin To Net: NetName=VCC Pin=C15-1
+Added Pin To Net: NetName=GND Pin=C15-2
+Added Pin To Net: NetName=VCC Pin=CH340G-4
+Added Pin To Net: NetName=VCC Pin=H3-4
+Added Pin To Net: NetName=VCC Pin=R8-2
+Added Pin To Net: NetName=VCC Pin=R9-2
+Added Pin To Net: NetName=NetR10_1 Pin=R11-2
+Added Pin To Net: NetName=VCC Pin=R12-2
+Added Pin To Net: NetName=VCC Pin=U3-1
+Added Pin To Net: NetName=VCC Pin=U3-8
+Added Pin To Net: NetName=NetR10_1 Pin=U3-11
+Added Pin To Net: NetName=VCC Pin=U3-13
+Change Net Name : Old Net Name=NetC1_2 New Net Name=VCC
+Change Net Name : Old Net Name=VCC New Net Name=3.3v
+Change Class Name : Old Net Name=Sheet_B1 New Net Name=Sheet_C1
+Added Member To Class: ClassName=Sheet_C1 Member=Component C15 0.1uF
+Added Rule: Name=Schematic Supply Nets

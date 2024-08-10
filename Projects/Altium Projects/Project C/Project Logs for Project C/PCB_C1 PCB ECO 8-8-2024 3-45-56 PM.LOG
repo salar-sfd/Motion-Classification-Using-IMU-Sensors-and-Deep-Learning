@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=C13 NewDesignator=TC3
+Change Component Designator: OldDesignator=C14 NewDesignator=TC4
+Change Net Name : Old Net Name=NetC13_1 New Net Name=NetCH_2
+Added Member To Class: ClassName=Sheet_C1 Member=Component TC3 10uF
+Added Member To Class: ClassName=Sheet_C1 Member=Component TC4 10uF

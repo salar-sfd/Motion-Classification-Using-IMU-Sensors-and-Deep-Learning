@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=3.3v Pin=3.3V-pt
+Removed Pin From Net: NetName=GND Pin=H3-1
+Add Pin To Net: Unknown Pin: Pin 3.3V-2
+Change Net Name : Old Net Name=Net328_7 New Net Name=NetATmega328_7
+Change Net Name : Old Net Name=Net328_8 New Net Name=NetATmega328_8
+Added Member To Class: ClassName=Sheet_C1 Member=Component ATmega328

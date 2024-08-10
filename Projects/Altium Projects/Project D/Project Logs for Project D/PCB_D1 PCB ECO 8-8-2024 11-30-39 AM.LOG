@@ -1,0 +1,13 @@
+Added Component: Designator=C14(CAPMP3216X180N)
+Add component (AddParameter): Name = "Arrow_Electronics-Purchase-URL"; Value = "https://snapeda.com/shop?store=Arrow+Electronics&id=47127"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Availability"; Value = "Warning"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "AVX"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser-Purchase-URL"; Value = "https://snapeda.com/shop?store=Mouser&id=47127"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TAJA106K016RNJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "1206 AVX"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TAJA106K016RNJ/AVX%20/%20Kyocera/view-part/47127/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Vbat Pin=C14-1
+Added Pin To Net: NetName=GND Pin=C14-2
+Added Member To Class: ClassName=Sheet_D1 Member=Component C14 10uF

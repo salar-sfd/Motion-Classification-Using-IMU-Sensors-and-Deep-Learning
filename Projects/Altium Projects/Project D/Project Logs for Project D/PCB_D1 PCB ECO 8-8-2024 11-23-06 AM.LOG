@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=GND Pin=C14-1
+Removed Pin From Net: NetName=Vbat Pin=C14-2
+Change Component Footprint: Designator=C13 Old Footprint=CAP0805 New Footprint=CAPMP3216X180N
+Change Component Footprint: Designator=C14 Old Footprint=CAP0805 New Footprint=CAPMP3216X180N
+Change component parameters: Designator = "C13" ("C13"); Footprint = "CAP0805"; UniqueID = "\DRBAYMBI" ("\DRBAYMBI")
+Change component parameters (AddParameter): Name = "Arrow_Electronics-Purchase-URL"; Value = "https://snapeda.com/shop?store=Arrow+Electronics&id=47127"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Availability"; Value = "Warning"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "AVX"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser-Purchase-URL"; Value = "https://snapeda.com/shop?store=Mouser&id=47127"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TAJA106K016RNJ"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1206 AVX"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TAJA106K016RNJ/AVX%20/%20Kyocera/view-part/47127/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C14" ("C14"); Footprint = "CAP0805"; UniqueID = "\BKEYGQSR" ("\BKEYGQSR")
+Change component parameters (AddParameter): Name = "Arrow_Electronics-Purchase-URL"; Value = "https://snapeda.com/shop?store=Arrow+Electronics&id=47127"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Availability"; Value = "Warning"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "AVX"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser-Purchase-URL"; Value = "https://snapeda.com/shop?store=Mouser&id=47127"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TAJA106K016RNJ"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "1206 AVX"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TAJA106K016RNJ/AVX%20/%20Kyocera/view-part/47127/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Vbat Pin=C14-1
+Added Pin To Net: NetName=GND Pin=C14-2
+Change Class Name : Old Net Name=Sheet_C1 New Net Name=Sheet_D1
+Added Member To Class: ClassName=Sheet_D1 Member=Component C13 10uF
+Added Member To Class: ClassName=Sheet_D1 Member=Component C14 10uF
