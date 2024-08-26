@@ -2,22 +2,23 @@ import time
 import keyboard
 from extension import *
 
-te = 100
-ti = 2
+te = 200
+ti = 3
 device_name = 'MPU9250'
-buffer_time = 5
 
-box = MPU9250(device_name, buffer_time)
+box = MPU9250(device_name, hardware_flag=True, data_length=2048)
 box.initiate(ti)
-box.create_figure()
+# box.create_figure()
 
-t0 = time.time()
-while(time.time()-t0 < te):
-    box.capture_data()
-    box.update_figure() 
-    if keyboard.is_pressed('esc'):
-        break
-    # print(data_arr[-1]) 
-    # print('\r', end='')
-    # box.reset_input_buffer()
+# t0 = time.time()
+# while(time.time()-t0 < te):
+#     box.capture_data()
+#     box.update_figure() 
+#     if keyboard.is_pressed('esc'):
+#         break
+#     # print(box.data_arr[-1, :]) 
+#     # print('\r', end='')
+#     # box.reset_input_buffer()
+class_list = ['a','b','c', 'd', 'e']
+box.dataset_generator('alphabet', len(class_list)*3, class_list, method='automatic')
 box.close()

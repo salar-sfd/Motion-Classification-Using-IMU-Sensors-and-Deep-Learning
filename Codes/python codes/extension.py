@@ -3,13 +3,18 @@ import serial
 import serial.tools.list_ports
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
 import time
+import os
+import keyboard
 
 class MPU9250(serial.Serial):
 
-    def __init__(self, device_name, buffer_time, baudrate=115200, timeout=1):
+    def __init__(self, device_name, data_length=2000, hardware_flag=0, nchanels=6, baudrate=115200, timeout=1):
         self.name = device_name
-        self.buffer_time = buffer_time
+        self.nchanels = nchanels
+        self.data_length = data_length
+        self.hardware_flag = hardware_flag
         self.address = MPU9250.find_address(device_name)
         if self.address:
             com_port = MPU9250.discover_port(self.address)
@@ -19,20 +24,21 @@ class MPU9250(serial.Serial):
 
     def initiate(self, ti):
             data_list = []
-            print('Initiating...')
+            print('Initiating, Keep the Device Still...')
             t0 = time.time()
             while(time.time()-t0 < ti):
                 data_list = data_list + self.capture_data_dynamic(0)
+            self.fs = len(data_list)/ti
             data_list = np.array(data_list)
-            self.fs = len(data_list)/(time.time()-t0)
             self.data_var = np.var(data_list, axis=0)
             self.gyro_bias = np.mean(data_list[:, 3:6], axis=0)
-            self.var_threshold = 4000*self.data_var
+            self.var_threshold = 3500*self.data_var
             self.bias_threshold = np.abs(300*self.gyro_bias)
-            self.window_size = int(0.05*self.fs)
-            self.data_length = int(self.buffer_time*self.fs)
-            self.data_arr = np.zeros([self.data_length, 6])
+            self.window_size = int(0.1*self.fs)
+            self.data_arr = np.zeros([self.data_length, self.nchanels])
             self.flag_arr = np.zeros(self.data_length)
+            self.new_action = 0
+            self.action_arr = np.zeros([self.data_length, self.nchanels])
             print('Initiating Done!')
 
     def capture_data(self, gyro_bias=0):
@@ -41,29 +47,35 @@ class MPU9250(serial.Serial):
                 data = self.readline()[0:-2].decode()
                 data = data.split(',')
                 data = [float(x) for x in data if x]
-                data = np.array(data[0:-1])
+                data = np.array(data)
                 data[0:3] = data[0:3]/(16384)
                 data[3:6] = data[3:6]/(131*180) - gyro_bias
             except:
-                print('Sample was skipped!')
+                print('Sample was Skipped!')
                 continue
-            if(data.size==6):
+            if(data.size==self.nchanels+1):
                 self.data_arr[0:-1] = self.data_arr[1:]
-                self.data_arr[-1] = data
+                self.data_arr[-1] = data[:6]
                 self.flag_arr[0:-1] = self.flag_arr[1:]
                 self.flag_arr[-1] = self.flag_arr[-2]
             if(self.in_waiting<80):
                 break
-        if(self.flag_arr[-1]):
-            if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold*0.7) or np.any(self.data_arr[-self.window_size:, 3:6]>self.bias_threshold*0.7)):
-                self.flag_arr[-int(self.window_size):] = 1
+        if(self.hardware_flag):
+            if(self.flag_arr[-1]==1 and data[6]==0):
+                self.save_new_action()
             else:
-                self.flag_arr[-1] = 0
+                self.flag_arr[-1] = data[6]
         else:
-            if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold) or np.any(np.mean(np.abs(self.data_arr[-self.window_size:, 3:6]))>self.bias_threshold)):
-                self.flag_arr[-int(self.window_size):] = 1
+            if(self.flag_arr[-1]):
+                if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold*0.5) or np.any(self.data_arr[-self.window_size:, 3:6]>self.bias_threshold*0.5)):
+                    self.flag_arr[-5*int(self.window_size):] = 1
+                else:
+                    self.save_new_action()
             else:
-                self.flag_arr[-1] = 0
+                if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold) or np.any(np.mean(np.abs(self.data_arr[-self.window_size:, 3:6]))>self.bias_threshold)):
+                    self.flag_arr[-5*int(self.window_size):] = 1
+                else:
+                    self.flag_arr[-1] = 0
 
     def capture_data_dynamic(self, gyro_bias=0):
         data_list = []
@@ -83,34 +95,111 @@ class MPU9250(serial.Serial):
                 break
         return data_list
 
-    def create_figure(self):
+    def save_new_action(self):
+        temp = np.where(np.diff(self.flag_arr))[0]
+        if(len(temp)):
+            action_indx = temp[-1] + 1
+        else:
+            action_indx = 0
+        self.new_action = 1
+        self.action_arr = self.action_arr*0
+        self.action_arr[:self.data_length-action_indx] = self.data_arr[action_indx:, :]
+        self.flag_arr[-1] = 0
+
+    def create_figure(self, figsize=(8, 6)):
         plt.ion()
-        self.fig, self.axs = plt.subplots(2, 1, figsize=(10, 8))
-        mng = plt.get_current_fig_manager()
-        mng.full_screen_toggle()
+        if(figsize == 'full'):
+            self.fig, self.axs = plt.subplots(2, 2, figsize=(8, 6))
+            mng = plt.get_current_fig_manager()
+            mng.full_screen_toggle()
+        else:
+            self.fig, self.axs = plt.subplots(2, 2, figsize=figsize)
+        
         plt.show(block=False)
 
-    def update_figure(self):
-        for ax in self.axs:
-            ax.cla()
+    def update_figure(self, suptitle='IMU'):
+        self.fig.suptitle(suptitle)
+        for axs in self.axs:
+            for ax in axs:
+                ax.cla()
+        self.axs[0][0].plot(self.data_arr[:, 0:3], label = ['x', 'y', 'z'])
+        self.axs[0][0].plot(self.flag_arr, label = 'f')
+        self.axs[0][0].set_ylim([-2.5, 2.5])
+        self.axs[0][0].set_title('Accelometer')
+        self.axs[0][1].plot(self.action_arr[:, 0:3], label = ['x', 'y', 'z'])
+        self.axs[0][1].set_ylim([-2.5, 2.5])
+        self.axs[0][1].set_title('Accelometer Last Action')
+        self.axs[1][0].plot(self.data_arr[:, 3:6], label = ['x', 'y', 'z'])
+        self.axs[1][0].plot(self.flag_arr, label = 'f')
+        self.axs[1][0].set_ylim([-1.5, 1.5])
+        self.axs[1][0].set_title('Gyroscope')
+        self.axs[1][1].plot(self.action_arr[:, 3:6], label = ['x', 'y', 'z'])
+        self.axs[1][1].set_ylim([-1.5, 1.5])
+        self.axs[1][1].set_title('Gyroscope Last Action')
 
-        self.axs[0].plot(self.data_arr[:, 0:3], label = ['x', 'y', 'z'])
-        self.axs[1].plot(self.data_arr[:, 3:6], label = ['x', 'y', 'z'])
-        self.axs[0].plot(self.flag_arr, label = 'f')
-        self.axs[1].plot(self.flag_arr, label = 'f')
-        self.axs[0].set_ylim([-2.5, 2.5])
-        self.axs[1].set_ylim([-1.5, 1.5])
+        for axs in self.axs:
+            for ax in axs:
+                ax.grid(True)
+                ax.legend(loc='upper right')
 
-        for ax in self.axs:
-            ax.grid(True)
-            ax.legend(loc='upper right')
         if(self.flag_arr[-1]):
             self.fig.set_facecolor('red')
         else:
             self.fig.set_facecolor('white')
         plt.draw()
+        plt.show(block=False)
         plt.pause(1/1000)
-         
+
+    def dataset_generator(self, dataset_name, ndata=None, class_list=None, method='manual'):
+        self.create_figure(figsize='full')
+        folder_path = 'Datasets'
+        full_path = folder_path+'\\'+dataset_name+'.npz'
+        if not os.path.exists('Datasets'):
+            os.makedirs(folder_path)
+        if os.path.exists(full_path):
+            dataset = np.load(full_path)
+            x_old = dataset['x']
+            y_old = list(dataset['y'])
+        if(method == 'manual'):
+            x_new = []
+            y_new = []
+            while True:
+                cls = input('Class name (enter -done to finish): ')
+                if(cls=='-done'):
+                    break
+                while not self.new_action:
+                    self.capture_data()
+                x_new.append(self.action_arr)
+                y_new.append(cls)
+                self.update_figure()
+                self.new_action = 0
+            x_new = np.array(x_new)
+            plt.pause(1)
+
+        if(method == 'automatic'):
+            x_new = np.zeros([ndata, self.data_length, self.nchanels])
+            y_new = []
+            self.update_figure(f'                 Next Class:{class_list[0]}      n = {0}/{ndata}')
+            plt.pause(0.5)
+            for i in range(ndata):
+                cls = class_list[i%len(class_list)]
+                while not self.new_action:
+                    self.capture_data()
+                x_new[i] = self.action_arr
+                y_new.append(cls)
+                self.update_figure(f'Class: {cls}     Next Class:{class_list[(i+1)%len(class_list)]}      n = {i+1}/{ndata}')
+                plt.pause(0.5)
+                self.new_action = 0
+            
+        if os.path.exists(full_path):
+            x = np.concatenate([x_old, x_new], axis=0)
+            y = y_old + y_new
+            np.savez(full_path, x=x, y=y)
+            print(f'{len(y_new)} new samples added to previous {len(y_old)} samples. The total number of samples: {len(y)}')
+        else:
+            np.savez(full_path, x=x_new, y=y_new)
+            print(f'{len(y_new)} new samples added. The total number of samples: {len(y_new)}')
+
     def find_address(device_name):
         print("Scanning for Bluetooth devices...")
         devices = bluetooth.discover_devices(duration=1, lookup_names=True, flush_cache=True, lookup_class=False)

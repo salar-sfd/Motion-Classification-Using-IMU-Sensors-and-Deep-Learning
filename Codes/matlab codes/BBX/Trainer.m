@@ -2,7 +2,7 @@ clc, clear, close all;
 
 %% Loading
 file_name = 'TrainSet1.mat';
-full_path = ['../../datasets/BBX/', file_name];
+full_path = ['../datasets/BBX/', file_name];
 load(full_path);
 
 x_train = cell(0);

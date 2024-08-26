@@ -1,6 +1,6 @@
 %% Connection
 clc, clear, close all;
-load('../../models/BBX/net.mat', 'net', 'class_names');
+load('../models/BBX/net.mat', 'net', 'class_names');
 
 if(exist('bt', 'var') == 0)
     bt = bluetooth('MPU9250'); 

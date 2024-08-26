@@ -9,6 +9,10 @@ int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
 unsigned long start, now, last;
 unsigned int loops = 0;
 void setup() {
+
+  pinMode(10, OUTPUT);
+  pinMode(13, INPUT);
+  digitalWrite(10, HIGH);
   Wire.begin();
   Wire.beginTransmission(MPU_addr);
   Wire.write(0x6B);  // PWR_MGMT_1 register
@@ -26,6 +30,7 @@ void setup() {
 void loop() {
 //  if(millis()-start<=10000)
 //  {
+  int flag = digitalRead(11);
   Wire.beginTransmission(MPU_addr);
   Wire.write(0x3B);  // starting with register 0x3B (ACCEL_XOUT_H)
   Wire.endTransmission(false);
@@ -36,10 +41,8 @@ void loop() {
   AcY = (t << 8) | Wire.read(); // 0x3D (ACCEL_YOUT_H) & 0x3E (ACCEL_YOUT_L)
   t = Wire.read();
   AcZ = (t << 8) | Wire.read(); // 0x3F (ACCEL_ZOUT_H) & 0x40 (ACCEL_ZOUT_L)
-  
   t = Wire.read(); t = Wire.read();
 //    Tmp = (t << 8) | Wire.read(); // 0x41 (TEMP_OUT_H) & 0x42 (TEMP_OUT_L)
-
   t = Wire.read();
   GyX = (t << 8) | Wire.read(); // 0x43 (GYRO_XOUT_H) & 0x44 (GYRO_XOUT_L)
   t = Wire.read();
@@ -47,19 +50,28 @@ void loop() {
   t = Wire.read();
   GyZ = (t << 8) | Wire.read(); // 0x47 (GYRO_ZOUT_H) & 0x48 (GYRO_ZOUT_L)
   t = Wire.read();
-  loops++;
-  now = millis();
-  if (now - last > 5UL) {
+//  loops++;
+//  now = millis();
+
+  if(digitalRead(13) == HIGH){
+    flag = 1;
+  }
+  else{
+    flag = 0;
+  }
+    
+//  if (now - last > 2UL) {
     Serial.print(AcX);
     Serial.print(", "); Serial.print(AcY);
     Serial.print(", "); Serial.print(AcZ);
     Serial.print(", "); Serial.print(GyX);
     Serial.print(", "); Serial.print(GyY);
     Serial.print(", "); Serial.print(GyZ);
-    Serial.print(", "); Serial.println(now);
+//    Serial.print(", "); Serial.print(now);
+    Serial.print(", "); Serial.println(flag);
 //    Serial.print(", "); Serial.println(loops);
-    loops = 0;
-    last = now;
-  }
+//    loops = 0;
+//    last = now;
+//  }
 //}
 }
