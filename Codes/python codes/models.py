@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 
-class ex(nn.Module):
+class AirNet(nn.Module):
     def __init__(self, nchannels=6, nclasses=5):
-        super(ex, self).__init__()
+        super(AirNet, self).__init__()
         self.conv1 = nn.Conv1d(in_channels=nchannels, out_channels=64, kernel_size=3, padding=1)
         self.conv2 = nn.Conv1d(in_channels=64, out_channels=64, kernel_size=3, padding=1)
         self.pool1 = nn.MaxPool1d(kernel_size=2)
