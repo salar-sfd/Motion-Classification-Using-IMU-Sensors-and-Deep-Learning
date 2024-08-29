@@ -210,7 +210,7 @@ class MPU9250(serial.Serial):
         folder_path = 'Models'
         variables_full_path = folder_path+'\\'+model_name+'.pkl'
         model_full_path = folder_path+'\\'+model_name+'.pth'
-        assert (os.path.exists(model_full_path) or os.path.exists(variables_full_path)), 'Model does not exist.'
+        assert (os.path.exists(model_full_path) and os.path.exists(variables_full_path)), 'Model does not exist.'
 
         with open(variables_full_path, 'rb') as f:
             data = pickle.load(f)
