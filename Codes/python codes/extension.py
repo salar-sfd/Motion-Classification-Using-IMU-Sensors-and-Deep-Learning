@@ -37,7 +37,7 @@ class MPU9250(serial.Serial):
             data_list = np.array(data_list)
             self.data_var = np.var(data_list, axis=0)
             self.gyro_bias = np.mean(data_list[:, 3:6], axis=0)
-            self.var_threshold = 3500*self.data_var
+            self.var_threshold = 5000*self.data_var
             self.bias_threshold = np.abs(300*self.gyro_bias)
             self.window_size = int(0.1*self.fs)
             self.data_arr = np.zeros([self.ntimesteps, self.nchannels])
