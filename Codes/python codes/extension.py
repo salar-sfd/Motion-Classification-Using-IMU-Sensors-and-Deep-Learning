@@ -7,13 +7,18 @@ import matplotlib
 import time
 import os
 import keyboard
+import torch
+import pickle
+import sys
+
+from models import *
 
 class MPU9250(serial.Serial):
 
-    def __init__(self, device_name, data_length=2000, hardware_flag=0, nchanels=6, baudrate=115200, timeout=1):
+    def __init__(self, device_name, ntimesteps=2000, hardware_flag=0, nchannels=6, baudrate=115200, timeout=1):
         self.name = device_name
-        self.nchanels = nchanels
-        self.data_length = data_length
+        self.nchannels = nchannels
+        self.ntimesteps = ntimesteps
         self.hardware_flag = hardware_flag
         self.address = MPU9250.find_address(device_name)
         if self.address:
@@ -35,10 +40,10 @@ class MPU9250(serial.Serial):
             self.var_threshold = 3500*self.data_var
             self.bias_threshold = np.abs(300*self.gyro_bias)
             self.window_size = int(0.1*self.fs)
-            self.data_arr = np.zeros([self.data_length, self.nchanels])
-            self.flag_arr = np.zeros(self.data_length)
+            self.data_arr = np.zeros([self.ntimesteps, self.nchannels])
+            self.flag_arr = np.zeros(self.ntimesteps)
             self.new_action = 0
-            self.action_arr = np.zeros([self.data_length, self.nchanels])
+            self.action_arr = np.zeros([self.ntimesteps, self.nchannels])
             print('Initiating Done!')
 
     def capture_data(self, gyro_bias=0):
@@ -51,9 +56,9 @@ class MPU9250(serial.Serial):
                 data[0:3] = data[0:3]/(16384)
                 data[3:6] = data[3:6]/(131*180) - gyro_bias
             except:
-                print('Sample was Skipped!')
+                # print('Sample was Skipped!')
                 continue
-            if(data.size==self.nchanels+1):
+            if(data.size==self.nchannels+1):
                 self.data_arr[0:-1] = self.data_arr[1:]
                 self.data_arr[-1] = data[:6]
                 self.flag_arr[0:-1] = self.flag_arr[1:]
@@ -103,7 +108,8 @@ class MPU9250(serial.Serial):
             action_indx = 0
         self.new_action = 1
         self.action_arr = self.action_arr*0
-        self.action_arr[:self.data_length-action_indx] = self.data_arr[action_indx:, :]
+        self.action_arr[:self.ntimesteps-action_indx] = self.data_arr[action_indx:, :]
+        self.action_arr[self.ntimesteps-action_indx:] = None
         self.flag_arr[-1] = 0
 
     def create_figure(self, figsize=(8, 6)):
@@ -154,7 +160,7 @@ class MPU9250(serial.Serial):
         self.create_figure(figsize='full')
         folder_path = 'Datasets'
         full_path = folder_path+'\\'+dataset_name+'.npz'
-        if not os.path.exists('Datasets'):
+        if not os.path.exists(folder_path):
             os.makedirs(folder_path)
         if os.path.exists(full_path):
             dataset = np.load(full_path)
@@ -177,7 +183,7 @@ class MPU9250(serial.Serial):
             plt.pause(1)
 
         if(method == 'automatic'):
-            x_new = np.zeros([ndata, self.data_length, self.nchanels])
+            x_new = np.zeros([ndata, self.ntimesteps, self.nchannels])
             y_new = []
             self.update_figure(f'                 Next Class:{class_list[0]}      n = {0}/{ndata}')
             plt.pause(0.5)
@@ -200,6 +206,35 @@ class MPU9250(serial.Serial):
             np.savez(full_path, x=x_new, y=y_new)
             print(f'{len(y_new)} new samples added. The total number of samples: {len(y_new)}')
 
+    def load_model(self, model_name):
+        folder_path = 'Models'
+        variables_full_path = folder_path+'\\'+model_name+'.pkl'
+        model_full_path = folder_path+'\\'+model_name+'.pth'
+        assert (os.path.exists(model_full_path) or os.path.exists(variables_full_path)), 'Model does not exist.'
+
+        with open(variables_full_path, 'rb') as f:
+            data = pickle.load(f)
+            label_encoder = data['label_encoder']
+            mean_arr = data['mean_arr']
+            std_arr = data['std_arr']
+
+        self.model = globals()[model_name](nchannels=self.nchannels, nclasses=len(label_encoder.classes_))        
+        self.model.load_state_dict(torch.load(model_full_path))
+        self.model.label_encoder = label_encoder
+        self.model.mean_arr = mean_arr
+        self.model.std_arr = std_arr
+
+    def classify_action(self):
+        input = self.action_arr.reshape([1, self.ntimesteps, self.nchannels])
+        input = (input-self.model.mean_arr)/self.model.std_arr
+        input[np.isnan(input)] = 0
+        input = torch.tensor(input.transpose([0, 2, 1]), dtype=torch.float32)
+        output = self.model(input)
+        _, label = torch.max(output, dim=1)
+        print(self.model.label_encoder.inverse_transform(label)[0], end='')
+        sys.stdout.flush()
+        self.new_action=0
+    
     def find_address(device_name):
         print("Scanning for Bluetooth devices...")
         devices = bluetooth.discover_devices(duration=1, lookup_names=True, flush_cache=True, lookup_class=False)
