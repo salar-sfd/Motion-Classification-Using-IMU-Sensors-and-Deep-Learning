@@ -21,15 +21,19 @@ class MPU9250(serial.Serial):
         self.ntimesteps = ntimesteps
         self.hardware_flag = hardware_flag
         self.address = MPU9250.find_address(device_name)
+        self.data_arr = np.zeros([self.ntimesteps, self.nchannels])
+        self.flag_arr = np.zeros(self.ntimesteps)
+        self.new_action = 0
+        self.action_arr = np.zeros([self.ntimesteps, self.nchannels])
         if self.address:
             com_port = MPU9250.discover_port(self.address)
         else:
             print('Bluetooth device not found.')
         super().__init__(port=com_port, baudrate=115200, timeout=1)
 
-    def initiate(self, ti):
+    def calibrate(self, ti):
             data_list = []
-            print('Initiating, Keep the Device Still...')
+            print('Calibrating, Keep the Device Still...')
             t0 = time.time()
             while(time.time()-t0 < ti):
                 data_list = data_list + self.capture_data_dynamic(0)
@@ -40,11 +44,7 @@ class MPU9250(serial.Serial):
             self.var_threshold = 5000*self.data_var
             self.bias_threshold = np.abs(300*self.gyro_bias)
             self.window_size = int(0.1*self.fs)
-            self.data_arr = np.zeros([self.ntimesteps, self.nchannels])
-            self.flag_arr = np.zeros(self.ntimesteps)
-            self.new_action = 0
-            self.action_arr = np.zeros([self.ntimesteps, self.nchannels])
-            print('Initiating Done!')
+            print('Calibrating Done!')
 
     def capture_data(self, gyro_bias=0):
         while True:
@@ -73,12 +73,12 @@ class MPU9250(serial.Serial):
         else:
             if(self.flag_arr[-1]):
                 if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold*0.5) or np.any(self.data_arr[-self.window_size:, 3:6]>self.bias_threshold*0.5)):
-                    self.flag_arr[-5*int(self.window_size):] = 1
+                    self.flag_arr[-1*int(self.window_size):] = 1
                 else:
                     self.save_new_action()
             else:
                 if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold) or np.any(np.mean(np.abs(self.data_arr[-self.window_size:, 3:6]))>self.bias_threshold)):
-                    self.flag_arr[-5*int(self.window_size):] = 1
+                    self.flag_arr[-1*int(self.window_size):] = 1
                 else:
                     self.flag_arr[-1] = 0
 
@@ -113,7 +113,7 @@ class MPU9250(serial.Serial):
         self.flag_arr[-1] = 0
 
     def create_figure(self, figsize=(8, 6)):
-        plt.ion()
+        # plt.ion()
         if(figsize == 'full'):
             self.fig, self.axs = plt.subplots(2, 2, figsize=(8, 6))
             mng = plt.get_current_fig_manager()
@@ -121,7 +121,7 @@ class MPU9250(serial.Serial):
         else:
             self.fig, self.axs = plt.subplots(2, 2, figsize=figsize)
         
-        plt.show(block=False)
+        # plt.show(block=False)
 
     def update_figure(self, suptitle='IMU'):
         self.fig.suptitle(suptitle)
@@ -152,12 +152,12 @@ class MPU9250(serial.Serial):
             self.fig.set_facecolor('red')
         else:
             self.fig.set_facecolor('white')
-        plt.draw()
-        plt.show(block=False)
-        plt.pause(1/1000)
+        # plt.draw()
+        # plt.show(block=False)
+        # plt.pause(1/1000)
 
     def dataset_generator(self, dataset_name, ndata=None, class_list=None, method='manual'):
-        self.create_figure(figsize='full')
+        # self.create_figure(figsize='full')
         folder_path = 'Datasets'
         full_path = folder_path+'\\'+dataset_name+'.npz'
         if not os.path.exists(folder_path):
@@ -180,7 +180,7 @@ class MPU9250(serial.Serial):
                 self.update_figure()
                 self.new_action = 0
             x_new = np.array(x_new)
-            plt.pause(1)
+            plt.pause(0.5)
 
         if(method == 'automatic'):
             x_new = np.zeros([ndata, self.ntimesteps, self.nchannels])
