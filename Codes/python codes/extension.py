@@ -30,6 +30,8 @@ class MPU9250(serial.Serial):
         else:
             print('Bluetooth device not found.')
         super().__init__(port=com_port, baudrate=115200, timeout=1)
+        if os.path.exists('settings.pkl'):
+            self.load_settings()
 
     def calibrate(self, ti):
             data_list = []
@@ -37,15 +39,46 @@ class MPU9250(serial.Serial):
             t0 = time.time()
             while(time.time()-t0 < ti):
                 data_list = data_list + self.capture_data_dynamic(0)
-            self.fs = len(data_list)/ti
             data_list = np.array(data_list)
+
+            self.fs = len(data_list)/ti
             self.data_var = np.var(data_list, axis=0)
             self.gyro_bias = np.mean(data_list[:, 3:6], axis=0)
-            self.var_threshold = 5000*self.data_var
-            self.bias_threshold = np.abs(300*self.gyro_bias)
+            self.var_threshold = 6000*self.data_var
+            self.bias_threshold = np.abs(400*self.gyro_bias)
             self.window_size = int(0.1*self.fs)
+            self.save_settings()
             print('Calibrating Done!')
 
+    def save_settings(self, filename='settings.pkl'):
+        settings = {
+            'fs': self.fs,
+            'data_var': self.data_var,
+            'gyro_bias': self.gyro_bias,
+            'var_threshold': self.var_threshold,
+            'bias_threshold': self.bias_threshold,
+            'window_size': self.window_size
+        }
+        
+        with open(filename, 'wb') as file:
+            pickle.dump(settings, file)
+        
+        print('Settings saved to', filename)
+
+    def load_settings(self, filename='settings.pkl'):
+        with open(filename, 'rb') as f:
+            settings = pickle.load(f)
+            
+            self.fs = settings['fs']
+            self.data_var = settings['data_var']
+            self.gyro_bias = settings['gyro_bias']
+            self.var_threshold = settings['var_threshold']
+            self.bias_threshold = settings['bias_threshold']
+            self.window_size = settings['window_size']
+            
+            print('Settings successfully loaded from', filename)
+
+    
     def capture_data(self, gyro_bias=0):
         while True:
             try:
@@ -72,7 +105,7 @@ class MPU9250(serial.Serial):
                 self.flag_arr[-1] = data[6]
         else:
             if(self.flag_arr[-1]):
-                if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold*0.5) or np.any(self.data_arr[-self.window_size:, 3:6]>self.bias_threshold*0.5)):
+                if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold*0.3) or np.any(self.data_arr[-self.window_size:, 3:6]>self.bias_threshold*0.3)):
                     self.flag_arr[-1*int(self.window_size):] = 1
                 else:
                     self.save_new_action()
@@ -152,14 +185,14 @@ class MPU9250(serial.Serial):
             self.fig.set_facecolor('red')
         else:
             self.fig.set_facecolor('white')
-        # plt.draw()
-        # plt.show(block=False)
-        # plt.pause(1/1000)
+        plt.draw()
+        plt.show(block=False)
+        plt.pause(1/1000)
 
     def dataset_generator(self, dataset_name, ndata=None, class_list=None, method='manual'):
-        # self.create_figure(figsize='full')
+        self.create_figure(figsize='full')
         folder_path = 'Datasets'
-        full_path = folder_path+'\\'+dataset_name+'.npz'
+        full_path = folder_path+'/'+dataset_name+'.npz'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
         if os.path.exists(full_path):
@@ -208,8 +241,8 @@ class MPU9250(serial.Serial):
 
     def load_model(self, model_name):
         folder_path = 'Models'
-        variables_full_path = folder_path+'\\'+model_name+'.pkl'
-        model_full_path = folder_path+'\\'+model_name+'.pth'
+        variables_full_path = folder_path+'/'+model_name+'.pkl'
+        model_full_path = folder_path+'/'+model_name+'.pth'
         assert (os.path.exists(model_full_path) and os.path.exists(variables_full_path)), 'Model does not exist.'
 
         with open(variables_full_path, 'rb') as f:
@@ -231,9 +264,8 @@ class MPU9250(serial.Serial):
         input = torch.tensor(input.transpose([0, 2, 1]), dtype=torch.float32)
         output = self.model(input)
         _, label = torch.max(output, dim=1)
-        print(self.model.label_encoder.inverse_transform(label)[0], end='')
-        sys.stdout.flush()
         self.new_action=0
+        return self.model.label_encoder.inverse_transform(label)[0]
     
     def find_address(device_name):
         print("Scanning for Bluetooth devices...")
