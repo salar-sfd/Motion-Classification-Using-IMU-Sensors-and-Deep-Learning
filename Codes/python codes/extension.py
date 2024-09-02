@@ -25,6 +25,7 @@ class MPU9250(serial.Serial):
         self.flag_arr = np.zeros(self.ntimesteps)
         self.new_action = 0
         self.action_arr = np.zeros([self.ntimesteps, self.nchannels])
+        self.ta = time.time()
         if self.address:
             com_port = MPU9250.discover_port(self.address)
         else:
@@ -114,6 +115,8 @@ class MPU9250(serial.Serial):
                     self.flag_arr[-1*int(self.window_size):] = 1
                 else:
                     self.flag_arr[-1] = 0
+        if(((self.flag_arr).all()==1) and (time.time()-self.ta>=0.1)):
+            self.save_new_action()
 
     def capture_data_dynamic(self, gyro_bias=0):
         data_list = []
@@ -144,6 +147,8 @@ class MPU9250(serial.Serial):
         self.action_arr[:self.ntimesteps-action_indx] = self.data_arr[action_indx:, :]
         self.action_arr[self.ntimesteps-action_indx:] = None
         self.flag_arr[-1] = 0
+        print(time.time()-self.ta)
+        self.ta = time.time()
 
     def create_figure(self, figsize=(8, 6)):
         # plt.ion()
