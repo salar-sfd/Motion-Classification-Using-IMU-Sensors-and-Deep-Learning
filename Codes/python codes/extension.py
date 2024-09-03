@@ -99,11 +99,13 @@ class MPU9250(serial.Serial):
                 self.flag_arr[-1] = self.flag_arr[-2]
             if(self.in_waiting<80):
                 break
+
         if(self.hardware_flag):
             if(self.flag_arr[-1]==1 and data[6]==0):
                 self.save_new_action()
             else:
                 self.flag_arr[-1] = data[6]
+
         else:
             if(self.flag_arr[-1]):
                 if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold*0.3) or np.any(self.data_arr[-self.window_size:, 3:6]>self.bias_threshold*0.3)):
@@ -115,8 +117,9 @@ class MPU9250(serial.Serial):
                     self.flag_arr[-1*int(self.window_size):] = 1
                 else:
                     self.flag_arr[-1] = 0
-        if(((self.flag_arr).all()==1) and (time.time()-self.ta>=0.1)):
-            self.save_new_action()
+        
+        if((self.flag_arr==1).all() and (time.time()-self.ta>=0.1)):
+            self.save_new_action(filled=True)
 
     def capture_data_dynamic(self, gyro_bias=0):
         data_list = []
@@ -136,7 +139,7 @@ class MPU9250(serial.Serial):
                 break
         return data_list
 
-    def save_new_action(self):
+    def save_new_action(self, filled=False):
         temp = np.where(np.diff(self.flag_arr))[0]
         if(len(temp)):
             action_indx = temp[-1] + 1
@@ -146,8 +149,8 @@ class MPU9250(serial.Serial):
         self.action_arr = self.action_arr*0
         self.action_arr[:self.ntimesteps-action_indx] = self.data_arr[action_indx:, :]
         self.action_arr[self.ntimesteps-action_indx:] = None
-        self.flag_arr[-1] = 0
-        print(time.time()-self.ta)
+        if(not filled):
+            self.flag_arr[-1] = 0
         self.ta = time.time()
 
     def create_figure(self, figsize=(8, 6)):
@@ -158,7 +161,6 @@ class MPU9250(serial.Serial):
             mng.full_screen_toggle()
         else:
             self.fig, self.axs = plt.subplots(2, 2, figsize=figsize)
-        
         # plt.show(block=False)
 
     def update_figure(self, suptitle='IMU'):
