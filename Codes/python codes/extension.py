@@ -45,9 +45,9 @@ class MPU9250(serial.Serial):
             self.fs = len(data_list)/ti
             self.data_var = np.var(data_list, axis=0)
             self.gyro_bias = np.mean(data_list[:, 3:6], axis=0)
-            self.var_threshold = 6000*self.data_var
-            self.bias_threshold = np.abs(400*self.gyro_bias)
-            self.window_size = int(0.1*self.fs)
+            self.var_threshold = 6000*self.data_var*0.5
+            self.bias_threshold = np.abs(400*self.gyro_bias)*0.5
+            self.window_size = int(0.2*self.fs)
             self.save_settings()
             print('Calibrating Done!')
 
@@ -108,7 +108,7 @@ class MPU9250(serial.Serial):
 
         else:
             if(self.flag_arr[-1]):
-                if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold*0.3) or np.any(self.data_arr[-self.window_size:, 3:6]>self.bias_threshold*0.3)):
+                if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold*0.1) or np.any(self.data_arr[-self.window_size:, 3:6]>self.bias_threshold*0.1)):
                     self.flag_arr[-1*int(self.window_size):] = 1
                 else:
                     self.save_new_action()
@@ -118,7 +118,7 @@ class MPU9250(serial.Serial):
                 else:
                     self.flag_arr[-1] = 0
         
-        if((self.flag_arr==1).all() and (time.time()-self.ta>=0.1)):
+        if((self.flag_arr==1).all() and (time.time()-self.ta>=0.5*self.ntimesteps/self.fs)):
             self.save_new_action(filled=True)
 
     def capture_data_dynamic(self, gyro_bias=0):
@@ -254,11 +254,12 @@ class MPU9250(serial.Serial):
 
         with open(variables_full_path, 'rb') as f:
             data = pickle.load(f)
+            preprocessing = data['preprocessing']
             label_encoder = data['label_encoder']
             mean_arr = data['mean_arr']
             std_arr = data['std_arr']
 
-        self.model = globals()[model_name](nchannels=self.nchannels, nclasses=len(label_encoder.classes_))        
+        self.model = globals()[model_name.split('_')[0]](nchannels=self.nchannels, nclasses=len(label_encoder.classes_), preprocessing=preprocessing)        
         self.model.load_state_dict(torch.load(model_full_path))
         self.model.label_encoder = label_encoder
         self.model.mean_arr = mean_arr

@@ -162,7 +162,7 @@ class Application(tk.Tk):
         button_frame.bind("<Configure>", self.resize_buttons)
 
         for model_name in model_names:
-            button = tk.Button(button_frame, text=model_name, command=lambda: self.classify(model_name) , font=self.button_font, bg=self.button_bg, fg=self.button_fg)
+            button = tk.Button(button_frame, text=model_name, command=lambda model_name=model_name: self.classify(model_name) , font=self.button_font, bg=self.button_bg, fg=self.button_fg)
             button.place()
             self.buttons.append(button)
         
@@ -216,9 +216,16 @@ class Application(tk.Tk):
             self.obj.capture_data()
             if self.obj.new_action:
                 label = self.obj.classify_action()
-                label = '\n' if label=='\\n' else label
+                label = '\n' if label=='\\n' else '\b' if label=='\\b' else label
+                # label = '\b' if label=='\\b' else label
                 label = ' ' if label=='\s' else label
-                self.text_screen.insert(tk.END, label)
+                if(len(label)>1):
+                     self.text_screen.delete(1.0, tk.END)
+                if(label=='\b'):
+                    last_char_index = self.text_screen.index('end-2c')
+                    self.text_screen.delete(last_char_index, tk.END)
+                else:
+                    self.text_screen.insert(tk.END, label)
             self.after(self.update_interval, self.capture_and_classify)
 
     def select_dataset(self):
@@ -322,12 +329,12 @@ class Application(tk.Tk):
                 cls = self.class_list[(self.n)%len(self.class_list)]
                 self.x_new.append(self.obj.action_arr)
                 self.y_new.append(cls)
-                self.update_figure(f'Class: {cls}     Next Class:{self.class_list[(self.n+1)%len(self.class_list)]}      n = {self.n+1}')
+                self.update_figure(f'Class: {cls}     Next Class: {self.class_list[(self.n+1)%len(self.class_list)]}      n = {self.n+1}')
                 self.canvas.draw()
 
                 self.obj.new_action = 0
                 self.n += 1
-                print(self.y_new[-1])
+                # print(self.y_new[-1])
             self.after(self.update_interval, self.capture_and_create)
     
     def save_dataset(self):
