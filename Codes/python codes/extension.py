@@ -49,7 +49,7 @@ class MPU9250(serial.Serial):
             self.bias_threshold = np.abs(400*self.gyro_bias)*0.5
             self.window_size = int(0.2*self.fs)
             self.save_settings()
-            print('Calibrating Done!')
+            print(f'fs: {self.fs}')
 
     def save_settings(self, filename='settings.pkl'):
         settings = {
@@ -90,7 +90,7 @@ class MPU9250(serial.Serial):
                 data[0:3] = data[0:3]/(16384)
                 data[3:6] = data[3:6]/(131*180) - gyro_bias
             except:
-                # print('Sample was Skipped!')
+                print('Sample was Skipped!')
                 continue
             if(data.size==self.nchannels+1):
                 self.data_arr[0:-1] = self.data_arr[1:]
