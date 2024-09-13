@@ -115,6 +115,7 @@ class MPU9250(serial.Serial):
             else:
                 if(np.any(np.var(self.data_arr[-self.window_size:], axis=0)>self.var_threshold) or np.any(np.mean(np.abs(self.data_arr[-self.window_size:, 3:6]))>self.bias_threshold)):
                     self.flag_arr[-1*int(self.window_size):] = 1
+                    # self.ta = time.time()
                 else:
                     self.flag_arr[-1] = 0
         
@@ -254,12 +255,12 @@ class MPU9250(serial.Serial):
 
         with open(variables_full_path, 'rb') as f:
             data = pickle.load(f)
-            preprocessing = data['preprocessing']
+            feature_extraction = data['feature_extraction']
             label_encoder = data['label_encoder']
             mean_arr = data['mean_arr']
             std_arr = data['std_arr']
 
-        self.model = globals()[model_name.split('_')[0]](nchannels=self.nchannels, nclasses=len(label_encoder.classes_), preprocessing=preprocessing)        
+        self.model = globals()[model_name.split('_')[0]](nchannels=self.nchannels, nclasses=len(label_encoder.classes_), feature_extraction=feature_extraction)        
         self.model.load_state_dict(torch.load(model_full_path))
         self.model.label_encoder = label_encoder
         self.model.mean_arr = mean_arr

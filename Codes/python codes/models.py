@@ -2,12 +2,12 @@ import torch
 import torch.nn as nn
 
 class AirNet(nn.Module):
-    def __init__(self, nchannels=6, nclasses=5, preprocessing=False):
+    def __init__(self, nchannels=6, nclasses=5, feature_extraction=False):
         super(AirNet, self).__init__()
         self.nhidden1 = 64
         self.nhidden2 = 512
-        self.preprocessing = preprocessing
-        if self.preprocessing:
+        self.feature_extraction = feature_extraction
+        if self.feature_extraction:
             nchannels += 2
         self.conv1 = nn.Conv1d(in_channels=nchannels, out_channels=self.nhidden1, kernel_size=3, padding=1)
         self.bn1 = nn.BatchNorm1d(self.nhidden1)
@@ -93,7 +93,7 @@ class AirNet(nn.Module):
         return x
     
     def forward(self, x):
-        if self.preprocessing:
+        if self.feature_extraction:
             x = self.preprocess(x)
         x = self.conv1(x)
         x = self.bn1(x)
@@ -174,12 +174,12 @@ class AirNet(nn.Module):
         return x
 
 class SpaceNet(nn.Module):
-    def __init__(self, nchannels=6, nclasses=5, preprocessing=False):
+    def __init__(self, nchannels=6, nclasses=5, feature_extraction=False):
         super(SpaceNet, self).__init__()
         self.nhidden1 = 64
         self.nhidden2 = 512
-        self.preprocessing = preprocessing
-        if self.preprocessing:
+        self.feature_extraction = feature_extraction
+        if self.feature_extraction:
             nchannels = nchannels*2 + 4
         self.conv1 = nn.Conv1d(in_channels=nchannels, out_channels=self.nhidden1, kernel_size=3, padding=1)
         self.bn1 = nn.BatchNorm1d(self.nhidden1)
@@ -267,7 +267,7 @@ class SpaceNet(nn.Module):
         return x
     
     def forward(self, x):
-        if self.preprocessing:
+        if self.feature_extraction:
             x = self.preprocess(x)
         x = self.conv1(x)
         x = self.bn1(x)
@@ -348,10 +348,10 @@ class SpaceNet(nn.Module):
         return x
     
 # class SpaceNet(nn.Module):
-#     def __init__(self, nchannels=6, nclasses=5, preprocessing=False):
+#     def __init__(self, nchannels=6, nclasses=5, feature_extraction=False):
 #         super(SpaceNet, self).__init__()
-#         self.preprocessing = preprocessing
-#         if self.preprocessing:
+#         self.feature_extraction = feature_extraction
+#         if self.feature_extraction:
 #             nchannels +=2
 #         self.conv1_1 = nn.Conv1d(in_channels=nchannels, out_channels=64, kernel_size=3, padding=1)
 #         self.conv2_1 = nn.Conv1d(in_channels=64, out_channels=64, kernel_size=3, padding=1)
@@ -501,7 +501,7 @@ class SpaceNet(nn.Module):
 #         return x
 
 #     def forward(self, x):
-#         if self.preprocessing:
+#         if self.feature_extraction:
 #             x = self.preprocess(x)
 #         y1 = self.path1(x)
 #         y2 = self.path2(x)
