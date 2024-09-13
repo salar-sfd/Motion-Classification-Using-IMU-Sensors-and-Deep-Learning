@@ -11,7 +11,7 @@ class Application(tk.Tk):
         super().__init__()
         self.obj = obj
         self.tc = tc
-        self.title('Main Menu')
+        self.title('IMU')
         self.geometry('1000x500')
         self.buttons = []
         self.textboxes = []
@@ -216,9 +216,7 @@ class Application(tk.Tk):
             self.obj.capture_data()
             if self.obj.new_action:
                 label = self.obj.classify_action()
-                label = '\n' if label=='\\n' else '\b' if label=='\\b' else label
-                # label = '\b' if label=='\\b' else label
-                label = ' ' if label=='\s' else label
+                label = '\n' if label=='\\n' else '\b' if label=='\\b' else ' ' if label=='\s' else label
                 if(len(label)>1):
                      self.text_screen.delete(1.0, tk.END)
                 if(label=='\b'):
@@ -306,6 +304,9 @@ class Application(tk.Tk):
         self.cancel_button = tk.Button(button_frame, text='Cancel', command=self.return_to_select_dataset, fg=self.button_fg, bg=self.button_bg)
         self.cancel_button.pack(side=tk.LEFT, padx=5)
 
+        self.save_button = tk.Button(button_frame, text='Delete Last', command=self.delete_last_action, fg=self.button_fg, bg=self.button_bg)
+        self.save_button.pack(side=tk.LEFT, padx=5)
+
         self.save_button = tk.Button(button_frame, text='Save', command=self.save_dataset, fg=self.button_fg, bg=self.button_bg)
         self.save_button.pack(side=tk.LEFT, padx=5)
 
@@ -337,6 +338,19 @@ class Application(tk.Tk):
                 # print(self.y_new[-1])
             self.after(self.update_interval, self.capture_and_create)
     
+    def delete_last_action(self):
+        if(self.n==0):
+            return
+        
+        self.x_new.pop(-1)
+        self.y_new.pop(-1)
+        self.obj.action_arr = self.obj.action_arr*0 if self.n==1 else self.x_new[-1]
+        self.obj.new_action = 0
+        self.n -= 1
+        
+        self.update_figure(f'Class: {self.class_list[(self.n-1)%len(self.class_list)]}     Next Class: {self.class_list[(self.n)%len(self.class_list)]}      n = {self.n}')
+        self.canvas.draw()
+
     def save_dataset(self):
         self.clear_window()
         self.updating = False
