@@ -16,52 +16,55 @@ class Application(tk.Tk):
         self.buttons = []
         self.textboxes = []
         self.entries = []
-        self.button_font = ['Verdana', 12]  # Initial font size
-        self.button_bg = '#072F57'  
-        self.button_fg = 'white'    
+        self.button_font = ['Verdana', 12]
+        self.button_bg = '#072F57' 
+        self.button_dbg = '#041A30' 
+        self.button_fg = 'white' 
+        self.bg = 'gray' 
+        self.configure(bg=self.bg)  
         self.create_main_menu()
 
     def resize_buttons(self, event):
-        button_width = event.width//3  
-        button_height = event.height//15  
-        self.button_font[1] = min(button_width//10, button_height//2) 
+        button_width = event.width*2 // 3  
+        button_height = min(self.winfo_height() // 8, 3*event.height // (4*len(self.buttons)))
+        self.button_font[1] = min(button_width//20, button_height//4) 
 
-        padding_y = button_height//3 
-
+        padding_y = (button_height//6)
         for i, button in enumerate(self.buttons):
-            button.config(font=self.button_font, pady=padding_y)
+            button.config(font=self.button_font)
             button.place(width=button_width, height=button_height, x=event.width//2 - button_width//2, y=padding_y + i*(button_height + padding_y * 2))
     
     def resize_texboxes(self, event):
-        textbox_width = event.width // 3
-        textbox_height = event.height * 5//6
-        
+        textbox_width = event.width*2 // 3
+        textbox_height = event.height*5 // 6
+        padding_y = self.winfo_height() // 48
         for i, widget in enumerate(self.textboxes):
             if i==0:
-                widget.place(width=textbox_width, height=textbox_height//5, x=event.width//2 - textbox_width//2, y=0)
+                widget.place(width=textbox_width, height=textbox_height//5, x=event.width//2 - textbox_width//2, y=padding_y)
                 widget.config(font=self.button_font)
             else:
-                widget.place(width=textbox_width, height=textbox_height, x=event.width//2 - textbox_width//2, y=textbox_height//5)
+                widget.place(width=textbox_width, height=textbox_height-padding_y, x=event.width//2 - textbox_width//2, y=padding_y+textbox_height//5)
+                widget.config(font=self.button_font)
 
     def resize_entries(self, event):
-        entry_width = event.width // 4
+        entry_width = event.width*2 // 4
         entry_height = event.height 
-        button_width = event.width // 12
+        button_width = event.width*2 // 12
         button_height = entry_height
-        # self.button_font[1] = min(entry_width//8, entry_height//8)
+        padding_y = self.winfo_height() // 48
 
         for entry, button in self.entries:
             entry.config(font=self.button_font)
-            entry.place(width=entry_width, height=entry_height, x=event.width//2 - (entry_width+button_width)//2, y=0)
+            entry.place(width=entry_width, height=entry_height-padding_y, x=event.width//2 - (entry_width+button_width)//2, y=padding_y)
             button.config(font=self.button_font, bg=self.button_bg, fg=self.button_fg)
-            button.place(width=button_width, height=button_height, x=event.width//2 + (entry_width-button_width)//2, y=0)
+            button.place(width=button_width, height=button_height-padding_y, x=event.width//2 + (entry_width-button_width)//2, y=padding_y)
 
     def create_main_menu(self):
         self.clear_window()
 
-        button_frame = tk.Frame(self)
-        button_frame.pack(expand=True, fill=tk.BOTH, padx=20, pady=20)
-        button_frame.bind("<Configure>", self.resize_buttons)
+        button_frame = tk.Frame(self, bg=self.bg)
+        button_frame.pack(expand=True, fill=tk.BOTH)
+        button_frame.bind('<Configure>', self.resize_buttons)
 
         classify_button = tk.Button(button_frame, text='Classify', command=self.select_model, font=self.button_font, bg=self.button_bg, fg=self.button_fg)
         classify_button.place()
@@ -79,7 +82,7 @@ class Application(tk.Tk):
         motion_detection_button = tk.Button(button_frame, text=motion_text, command=self.swap_flag, font=self.button_font, bg='#125E29' if self.obj.hardware_flag else '#5C000E', fg=self.button_fg)
         motion_detection_button.place()
 
-        quit_button = tk.Button(button_frame, text='Quit', command=self.quit_app, font=self.button_font, bg='#041A30', fg=self.button_fg)
+        quit_button = tk.Button(button_frame, text='Quit', command=self.quit_app, font=self.button_font, bg=self.button_dbg, fg=self.button_fg)
         quit_button.place()
 
         self.buttons = [classify_button, calibrate_button, plot_button, dataset_creator_button, motion_detection_button, quit_button]
@@ -91,18 +94,18 @@ class Application(tk.Tk):
     def plot_data(self):
         self.clear_window()
 
-        self.frame = tk.Frame(self)
+        self.frame = tk.Frame(self, bg=self.bg)
         self.frame.pack(expand=True, fill=tk.BOTH)
 
         self.fig, self.axs = plt.subplots(2, 2)
 
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.frame)
         self.canvas.draw()
-        self.canvas.get_tk_widget().grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
+        self.canvas.get_tk_widget().grid(row=0, column=0, sticky='nsew')
 
-        button_frame = tk.Frame(self.frame)
+        button_frame = tk.Frame(self.frame, bg=self.bg)
         button_frame.grid(row=1, column=0, padx=10, pady=10, sticky='w')
-        self.return_button = tk.Button(button_frame, text='Return', command=self.return_to_main_menu, fg=self.button_fg, bg=self.button_bg)
+        self.return_button = tk.Button(button_frame, text='Return', command=self.return_to_main_menu, fg=self.button_fg, bg=self.button_dbg)
         self.return_button.pack(side=tk.LEFT, padx=5)
 
         self.frame.columnconfigure(0, weight=1)
@@ -131,11 +134,11 @@ class Application(tk.Tk):
     def calibrate(self):
         self.clear_window()
 
-        frame = tk.Frame(self)
-        frame.pack(expand=True, fill=tk.BOTH, padx=5, pady=5)
+        frame = tk.Frame(self, bg=self.bg)
+        frame.pack(expand=True, fill=tk.BOTH)
         frame.bind('<Configure>', self.resize_texboxes)
         self.textboxes = []
-        label = tk.Label(self, text='Calibrating...', font=self.button_font, fg=self.button_fg, bg='#5C000E')
+        label = tk.Label(frame, text='Calibrating...', font=self.button_font, fg=self.button_fg, bg='#5C000E')
         label.place()
         self.textboxes.append(label)
 
@@ -157,8 +160,8 @@ class Application(tk.Tk):
         model_names = list(set(model_names))
         
         self.buttons = []
-        button_frame = tk.Frame(self)
-        button_frame.pack(expand=True, fill=tk.BOTH, padx=20, pady=20)
+        button_frame = tk.Frame(self, bg=self.bg)
+        button_frame.pack(expand=True, fill=tk.BOTH)
         button_frame.bind("<Configure>", self.resize_buttons)
 
         for model_name in model_names:
@@ -166,23 +169,23 @@ class Application(tk.Tk):
             button.place()
             self.buttons.append(button)
         
-        return_button = tk.Button(button_frame, text='Return', command=self.create_main_menu, font=self.button_font, bg='#041A30', fg=self.button_fg)
+        return_button = tk.Button(button_frame, text='Return', command=self.create_main_menu, font=self.button_font, bg=self.button_dbg, fg=self.button_fg)
         return_button.place()
         self.buttons.append(return_button)
 
     def classify(self, model_name):
         self.clear_window()
 
-        grid_frame = tk.Frame(self)
-        grid_frame.pack(expand=True, fill=tk.BOTH, padx=5, pady=5)
-
-        textbox_frame = tk.Frame(grid_frame, padx=5, pady=5)
-        button_frame = tk.Frame(grid_frame, padx=5, pady=5)
+        grid_frame = tk.Frame(self, bg=self.bg)
+        grid_frame.pack(expand=True, fill=tk.BOTH)
+        
+        textbox_frame = tk.Frame(grid_frame, bg=self.bg)
+        button_frame = tk.Frame(grid_frame, bg=self.bg)
 
         textbox_frame.grid(row=0, column=0, sticky='nsew')
         button_frame.grid(row=1, column=0, sticky='nsew')
-        grid_frame.rowconfigure(0, weight=1)
-        grid_frame.rowconfigure(1, weight=2)
+        grid_frame.rowconfigure(0, weight=5)
+        grid_frame.rowconfigure(1, weight=1)
 
         grid_frame.columnconfigure(0, weight=1)
 
@@ -191,7 +194,7 @@ class Application(tk.Tk):
         textbox_frame.bind('<Configure>', self.resize_texboxes)
         self.textboxes = []
         label = tk.Label(textbox_frame, text='Classified Text', font=self.button_font, bg=self.button_bg, fg=self.button_fg, anchor='w')
-        label.place()
+        label.pack()
         self.textboxes.append(label)
         self.text_screen = tk.Text(textbox_frame, font=self.button_font)
         self.text_screen.place()
@@ -199,7 +202,7 @@ class Application(tk.Tk):
 
         button_frame.bind('<Configure>', self.resize_buttons)
         self.buttons = []
-        return_button = tk.Button(button_frame, text='Return', command=self.create_main_menu, font=self.button_font, bg=self.button_bg, fg=self.button_fg)
+        return_button = tk.Button(button_frame, text='Return', command=self.return_to_main_menu, font=self.button_font, bg=self.button_dbg, fg=self.button_fg)
         return_button.place()
         self.buttons.append(return_button)
 
@@ -229,17 +232,17 @@ class Application(tk.Tk):
     def select_dataset(self):
         self.clear_window()
         
-        grid_frame = tk.Frame(self)
-        grid_frame.pack(expand=True, fill=tk.BOTH, padx=5, pady=5)
+        grid_frame = tk.Frame(self, bg=self.bg)
+        grid_frame.pack(expand=True, fill=tk.BOTH)
 
-        textbox_frame = tk.Frame(grid_frame, padx=5, pady=5)
-        entry_frame = tk.Frame(grid_frame, padx=5, pady=5)
-        button_frame = tk.Frame(grid_frame, padx=5, pady=5)
+        textbox_frame = tk.Frame(grid_frame, bg=self.bg)
+        entry_frame = tk.Frame(grid_frame, bg=self.bg)
+        button_frame = tk.Frame(grid_frame, bg=self.bg)
 
         textbox_frame.grid(row=0, column=0, sticky='nsew')
         entry_frame.grid(row=1, column=0, sticky='nsew')
         button_frame.grid(row=2, column=0, sticky='nsew')
-        grid_frame.rowconfigure(0, weight=3)
+        grid_frame.rowconfigure(0, weight=2)
         grid_frame.rowconfigure(1, weight=1)
         grid_frame.rowconfigure(2, weight=6)
 
@@ -249,7 +252,7 @@ class Application(tk.Tk):
         textbox_frame.bind('<Configure>', self.resize_texboxes)
         self.textboxes = []
         label = tk.Label(textbox_frame, text='Classes Separated by Space:', font=self.button_font, bg=self.button_bg, fg=self.button_fg, anchor='w')
-        label.place()
+        label.pack()
         self.textboxes.append(label)
         self.text_screen1 = tk.Text(textbox_frame, font=self.button_font)
         self.text_screen1.place()
@@ -277,7 +280,7 @@ class Application(tk.Tk):
             button = tk.Button(button_frame, text=dataset_name, command=lambda dataset=dataset_name: self.helper_func(dataset), font=self.button_font, bg=self.button_bg, fg=self.button_fg)
             button.place()
             self.buttons.append(button)
-        return_button = tk.Button(button_frame, text='Return', command=self.return_to_main_menu, font=self.button_font, bg='#041A30', fg=self.button_fg)
+        return_button = tk.Button(button_frame, text='Return', command=self.return_to_main_menu, font=self.button_font, bg=self.button_dbg, fg=self.button_fg)
         return_button.place()
         self.buttons.append(return_button)
             
@@ -290,7 +293,7 @@ class Application(tk.Tk):
     def modify_dataset(self):
         self.clear_window()
 
-        self.frame = tk.Frame(self)
+        self.frame = tk.Frame(self, bg=self.bg)
         self.frame.pack(expand=True, fill=tk.BOTH)
 
         self.fig, self.axs = plt.subplots(2, 2)
@@ -299,9 +302,9 @@ class Application(tk.Tk):
         self.canvas.draw()
         self.canvas.get_tk_widget().grid(row=0, column=0, padx=10, pady=10, sticky='nsew')
 
-        button_frame = tk.Frame(self.frame)
+        button_frame = tk.Frame(self.frame, bg=self.bg)
         button_frame.grid(row=1, column=0, padx=10, pady=10, sticky='w')
-        self.cancel_button = tk.Button(button_frame, text='Cancel', command=self.return_to_select_dataset, fg=self.button_fg, bg=self.button_bg)
+        self.cancel_button = tk.Button(button_frame, text='Cancel', command=self.return_to_select_dataset, fg=self.button_fg, bg=self.button_dbg)
         self.cancel_button.pack(side=tk.LEFT, padx=5)
 
         self.save_button = tk.Button(button_frame, text='Delete Last', command=self.delete_last_action, fg=self.button_fg, bg=self.button_bg)
@@ -389,7 +392,7 @@ class Application(tk.Tk):
         self.obj.hardware_flag = False if self.obj.hardware_flag else True
         self.create_main_menu()
 
-    def update_figure(self, suptitle='IMU'):
+    def update_figure(self, suptitle='IMU Data Plotter'):
         self.fig.suptitle(suptitle)
         for axs in self.axs:
             for ax in axs:
@@ -417,7 +420,7 @@ class Application(tk.Tk):
         if(self.obj.flag_arr[-1]):
             self.fig.set_facecolor('red')
         else:
-            self.fig.set_facecolor('white')
+            self.fig.set_facecolor(self.bg)
     
     def quit_app(self):
         self.obj.close()
