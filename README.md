@@ -49,12 +49,12 @@ In the second phase, all components were integrated into a single PCB, reducing 
 
 > **Note 2**: The final size of the board is 4 by 4 cm.
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images/2.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
+  <img src="Images/2.jpg" alt="Image 1" style="width: 48.5%; margin-right: 1%;"/>
   <img src="Images/3.jpg" alt="Image 2" style="width: 49%;"/>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images/4.jpg" alt="Image 1" style="width: 54%; margin-right: 1%;"/>
+  <img src="Images/4.jpg" alt="Image 1" style="width: 53.5%; margin-right: 1%;"/>
   <img src="Images/5.jpg" alt="Image 2" style="width: 44%;"/>
 </div>
 
