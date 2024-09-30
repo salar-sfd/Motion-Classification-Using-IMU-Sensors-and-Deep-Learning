@@ -54,7 +54,7 @@ In the second phase, all components were integrated into a single PCB, reducing 
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images/4.jpg" alt="Image 1" style="width: 55%; margin-right: 1%;"/>
+  <img src="Images/4.jpg" alt="Image 1" style="width: 53%; margin-right: 1%;"/>
   <img src="Images/5.jpg" alt="Image 2" style="width: 44%;"/>
 </div>
 
