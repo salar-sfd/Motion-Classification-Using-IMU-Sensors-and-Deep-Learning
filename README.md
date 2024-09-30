@@ -2,7 +2,7 @@
 
 This project aims to design and implement a system that utilizes IMU (Inertial Measurement Unit) sensors and deep learning techniques to recognize various human motions. Applications include air-writing (writing on an imaginary blackboard with the device attached to the back of the hand) and health-related use cases like fall detection for the elderly or patients with mobility issues. The system comprises both hardware and software components working together to detect and classify different types of movements using a neural network.
 
-![Alt text](Images\1.jpg)
+![Alt text](Images/1.jpg)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -49,13 +49,13 @@ In the second phase, all components were integrated into a single PCB, reducing 
 
 > **Note 2**: The final size of the board is 4 by 4 cm.
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images\2.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
-  <img src="Images\3.jpg" alt="Image 2" style="width: 49%;"/>
+  <img src="Images/2.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
+  <img src="Images/3.jpg" alt="Image 2" style="width: 49%;"/>
 </div>
 <br>
-<div style="display: flex;">
-  <img src="Images\4.jpg" alt="Image 1" style="width: 56%;"/>
-  <img src="Images\5.jpg" alt="Image 2" style="width: 44%;"/>
+<div style="display: flex; justify-content: space-between;">
+  <img src="Images/4.jpg" alt="Image 1" style="width: 55%; margin-right: 1%;"/>
+  <img src="Images/5.jpg" alt="Image 2" style="width: 43%;"/>
 </div>
 
 
@@ -70,27 +70,27 @@ The project includes a custom Python class that interfaces with the MPU9250 sens
 ### Main Application
 
 The `app.py` file contains the main application with a graphical user interface (GUI). At startup, it automatically connects to the device, presenting a menu with the following options:
-![Alt text](Images\6.jpg)
+![Alt text](Images/6.jpg)
 
 #### Plot Data
 
 A real-time data visualization system that plots received IMU data, allowing monitoring of acceleration and angular velocity changes over time. It also trims data based on the user's last action, detected either by the hardware flag (`hw_flag`) or automatically via software.
-![Alt text](Images\7.jpg)
+![Alt text](Images/7.jpg)
 
 #### Modify Datasets
 
 This tool allows users to sample and organize data based on specific movements or gestures. Users can set dataset classes and save or add samples to an existing dataset. After selecting the **Modify Datasets** option, a window appears where users can specify the dataset.
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images\8.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
-  <img src="Images\9.jpg" alt="Image 2" style="width: 49%;"/>
+  <img src="Images/8.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
+  <img src="Images/9.jpg" alt="Image 2" style="width: 49%;"/>
 </div>
 
 #### Classify
 
 Upon selecting this option, a window displays all saved trained models in the **Codes\python codes\Models** directory. Users can choose one of the models, and in the newly opened window, predicted gestures are displayed in real time.
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images\10.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
-  <img src="Images\11.jpg" alt="Image 2" style="width: 49%;"/>
+  <img src="Images/10.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
+  <img src="Images/11.jpg" alt="Image 2" style="width: 49%;"/>
 </div>
 
 ### Model Training
@@ -98,21 +98,21 @@ Upon selecting this option, a window displays all saved trained models in the **
 A neural network model, named **AirNet**, was designed and trained on a dataset of 2,170 gestures corresponding to 31 characters (English lowercase letters and some special characters). A Jupyter notebook (`trainer.ipynb`) is provided to facilitate model training. All available model architectures for training should be declared in the `models.py` file.
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images\12.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
-  <img src="Images\13.png" alt="Image 2" style="width: 49%;"/>
+  <img src="Images/12.jpg" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
+  <img src="Images/13.png" alt="Image 2" style="width: 49%;"/>
 </div>
 <br>
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images\14.png" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
-  <img src="Images\15.png" alt="Image 2" style="width: 49%;"/>
+  <img src="Images/14.png" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
+  <img src="Images/15.png" alt="Image 2" style="width: 49%;"/>
 </div>
 
 ## Results
 
 The system achieved an accuracy of **98%** during model evaluation. The confusion matrix and loss/accuracy plots from the training process show consistent improvement, demonstrating a well-trained model. The model effectively detects and classifies various human motions.
 <div style="display: flex; justify-content: space-between;">
-  <img src="Images\16.png" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
-  <img src="Images\17.png" alt="Image 2" style="width: 49%;"/>
+  <img src="Images/16.png" alt="Image 1" style="width: 49%; margin-right: 1%;"/>
+  <img src="Images/17.png" alt="Image 2" style="width: 49%;"/>
 </div>
 
 ## Future Work
