@@ -1,4 +1,4 @@
-# Human Motion Evaluation Using IMU Sensors and Deep Learning
+# Human Motion Classification Using IMU Sensors and Deep Learning
 
 This project aims to design and implement a system that utilizes IMU (Inertial Measurement Unit) sensors and deep learning techniques to recognize various human motions. Applications include air-writing (writing on an imaginary blackboard with the device attached to the back of the hand) and health-related use cases like fall detection for the elderly or patients with mobility issues. The system comprises both hardware and software components working together to detect and classify different types of movements using a neural network.
 
