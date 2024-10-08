@@ -1,2 +1,4 @@
 # List of untracked files to ignore
 Private Documents/
+Codes/python codes/Datasets/*
+!Codes/python codes/Datasets/.gitkeep
