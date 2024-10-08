@@ -122,5 +122,8 @@ Potential future improvements include:
 - **Fall Detection**: Enhancing the system to detect falls or near-falls by gathering a suitable dataset and designing an appropriate model architecture.
 
 ## References
-- Amma, Christoph, Marcus Georgi, and Tanja Schultz. "Airwriting: a wearable handwriting recognition system." *Personal and Ubiquitous Computing*, 18 (2014): 191-203.
-- Choi, Ahnryul, et al. "Deep learning-based near-fall detection algorithm for fall risk monitoring system using a single inertial measurement unit." *IEEE Transactions on Neural Systems and Rehabilitation Engineering*, 30 (2022): 2385-2394.
+- [1] [Airwriting: A wearable handwriting recognition system](https://dl.acm.org/doi/10.1007/)
+
+- [2] [Deep learning-based near-fall detection algorithm for fall risk monitoring system using a single inertial measurement unit](https://pubmed.ncbi.nlm.nih.gov/35969550/)
+
+- [3] [Airwriting recognition using wearable motion sensors](https://www.csl.uni-bremen.de/cms/images/documents/publications/AmmaGeorgiSchultz_PUC2013.pdf)
